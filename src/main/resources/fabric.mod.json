@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "biomeslesnaturels",
+  "version": "${version}",
+  "name": "Biomes Les Naturels",
+  "description": "Adding new, fun biomes!",
+  "authors": [
+    "KaloyanKYS"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/biomeslesnaturels/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "me.kaloyankys.biomeslesnaturels.client.BiomeslesnaturelsClient"
+    ],
+    "main": [
+      "me.kaloyankys.biomeslesnaturels.Biomeslesnaturels"
+    ]
+  },
+  "mixins": [
+    "biomeslesnaturels.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.11.2",
+    "fabric": "*",
+    "minecraft": "1.16.5"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=upper": {
+      "model": "biomeslesnaturels:block/oat_grass_top"
+    },
+    "half=lower": {
+      "model": "biomeslesnaturels:block/oat_grass_bottom"
+    }
+  }
+}
