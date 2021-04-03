@@ -7,6 +7,8 @@ import me.kaloyankys.biomeslesnaturels.modinit.ModBiomes;
 import me.kaloyankys.biomeslesnaturels.modinit.ModFeatures;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.particle.DefaultParticleType;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 
 public class Biomeslesnaturels implements ModInitializer {
 
@@ -18,5 +20,6 @@ public class Biomeslesnaturels implements ModInitializer {
         new ModBiomes();
         new ModBlocks();
         new ModFeatures();
+        Registry.register(Registry.PARTICLE_TYPE, new Identifier("biomeslesnaturels", "geyser_bubble"), GEYSER_BUBBLE);
     }
 }

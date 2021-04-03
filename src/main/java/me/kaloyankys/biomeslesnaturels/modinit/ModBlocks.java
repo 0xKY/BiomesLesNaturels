@@ -31,7 +31,6 @@ public class ModBlocks {
 
     public ModBlocks() {
 
-        new ModBiomes();
         Registry.register(Registry.BLOCK, new Identifier("biomeslesnaturels", "oat_grass"), OAT_GRASS);
         Registry.register(Registry.ITEM, new Identifier("biomeslesnaturels", "oat_grass"), new BlockItem(OAT_GRASS, new FabricItemSettings().group(ItemGroup.DECORATIONS)));
         Registry.register(Registry.BLOCK, new Identifier("biomeslesnaturels", "oat_grass_small"), OAT_GRASS_SMALL);
