@@ -1,16 +1,16 @@
 {
   "textures": [
-    "biomeslesnaturels:textures/particle/geyser_bubble/0",
-    "biomeslesnaturels:textures/particle/geyser_bubble/1",
-    "biomeslesnaturels:textures/particle/geyser_bubble/2",
-    "biomeslesnaturels:textures/particle/geyser_bubble/3",
-    "biomeslesnaturels:textures/particle/geyser_bubble/4",
-    "biomeslesnaturels:textures/particle/geyser_bubble/5",
-    "biomeslesnaturels:textures/particle/geyser_bubble/6",
-    "biomeslesnaturels:textures/particle/geyser_bubble/7",
-    "biomeslesnaturels:textures/particle/geyser_bubble/8",
-    "biomeslesnaturels:textures/particle/geyser_bubble/9",
-    "biomeslesnaturels:textures/particle/geyser_bubble/10",
-    "biomeslesnaturels:textures/particle/geyser_bubble/11"
+    "biomeslesnaturels:0",
+    "biomeslesnaturels:1",
+    "biomeslesnaturels:2",
+    "biomeslesnaturels:3",
+    "biomeslesnaturels:4",
+    "biomeslesnaturels:5",
+    "biomeslesnaturels:6",
+    "biomeslesnaturels:7",
+    "biomeslesnaturels:8",
+    "biomeslesnaturels:9",
+    "biomeslesnaturels:10",
+    "biomeslesnaturels:11"
   ]
 }

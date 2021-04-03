@@ -18,7 +18,7 @@ public class GeyserBubbleParticle extends AscendingParticle {
     @Override
     public float getSize(float tickDelta) {
         float ageDelta = ((float)this.age + tickDelta) / ((float)this.maxAge / 2);
-        return this.scale * (1.0F - ageDelta) * 1.4F;
+        return this.scale * (2.0F - ageDelta) * 2.0F;
     }
 
     @Environment(EnvType.CLIENT)
@@ -31,7 +31,7 @@ public class GeyserBubbleParticle extends AscendingParticle {
 
         @Override
         public Particle createParticle(DefaultParticleType defaultParticleType, ClientWorld clientWorld, double x, double y, double z, double velocityX, double velocityY, double velocityZ) {
-            return new GeyserBubbleParticle(clientWorld, x, y, z, velocityX, velocityY, velocityZ, 1.0F, this.spriteProvider);
+            return new GeyserBubbleParticle(clientWorld, x, y, z, velocityX, velocityY, velocityZ, 2.0F, this.spriteProvider);
         }
     }
 }
