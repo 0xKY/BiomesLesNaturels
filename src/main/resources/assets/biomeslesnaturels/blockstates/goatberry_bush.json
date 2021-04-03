@@ -4,13 +4,13 @@
       "model": "biomeslesnaturels:block/goatberry_bush"
     },
     "age=1": {
-      "model": "biomeslesnaturels:block/goatberry_bush"
+      "model": "biomeslesnaturels:block/goatberry_bush_mature"
     },
     "age=2": {
-      "model": "biomeslesnaturels:block/goatberry_bush"
+      "model": "biomeslesnaturels:block/goatberry_bush_mature1"
     },
     "age=3": {
-      "model": "biomeslesnaturels:block/goatberry_bush_mature"
+      "model": "biomeslesnaturels:block/goatberry_bush_mature2"
     }
   }
 }

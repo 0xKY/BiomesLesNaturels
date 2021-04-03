@@ -1,6 +1,6 @@
 {
 	"parent": "block/cross",
 	"textures": {
-		"all": "biomeslesnaturels:block/mint"
+		"cross": "biomeslesnaturels:block/mint"
 	}
 }

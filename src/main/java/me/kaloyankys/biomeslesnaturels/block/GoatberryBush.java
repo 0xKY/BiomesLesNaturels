@@ -1,5 +1,6 @@
 package me.kaloyankys.biomeslesnaturels.block;
 
+import me.kaloyankys.biomeslesnaturels.Biomeslesnaturels;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.block.*;
@@ -28,7 +29,7 @@ public class GoatberryBush extends PlantBlock implements Fertilizable {
 
     public GoatberryBush(AbstractBlock.Settings settings) {
         super(settings);
-        this.setDefaultState((BlockState)((BlockState)this.stateManager.getDefaultState()).with(AGE, 0));
+        this.setDefaultState((BlockState) ((BlockState) this.stateManager.getDefaultState()).with(AGE, 0));
     }
 
     @Environment(EnvType.CLIENT)
@@ -41,7 +42,7 @@ public class GoatberryBush extends PlantBlock implements Fertilizable {
     }
 
     public boolean hasRandomTicks(BlockState state) {
-        return (Integer)state.get(AGE) < 3;
+        return (Integer) state.get(AGE) < 3;
     }
 
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
@@ -51,16 +52,17 @@ public class GoatberryBush extends PlantBlock implements Fertilizable {
         }
 
     }
+
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        int i = (Integer)state.get(AGE);
+        int i = (Integer) state.get(AGE);
         boolean bl = i == 3;
         if (!bl && player.getStackInHand(hand).getItem() == Items.BONE_MEAL) {
             return ActionResult.PASS;
         } else if (i > 1) {
             int j = 1 + world.random.nextInt(2);
             dropStack(world, pos, new ItemStack(Items.SWEET_BERRIES, j + (bl ? 1 : 0)));
-            world.playSound((PlayerEntity)null, pos, SoundEvents.ITEM_SWEET_BERRIES_PICK_FROM_BUSH, SoundCategory.BLOCKS, 1.0F, 0.8F + world.random.nextFloat() * 0.4F);
-            world.setBlockState(pos, (BlockState)state.with(AGE, 1), 2);
+            world.playSound((PlayerEntity) null, pos, SoundEvents.ITEM_SWEET_BERRIES_PICK_FROM_BUSH, SoundCategory.BLOCKS, 1.0F, 0.8F + world.random.nextFloat() * 0.4F);
+            world.setBlockState(pos, (BlockState) state.with(AGE, 1), 2);
             return ActionResult.success(world.isClient);
         } else {
             return super.onUse(state, world, pos, player, hand, hit);
@@ -72,11 +74,14 @@ public class GoatberryBush extends PlantBlock implements Fertilizable {
     }
 
     public boolean isFertilizable(BlockView world, BlockPos pos, BlockState state, boolean isClient) {
-        return (Integer)state.get(AGE) < 3;
+        return (Integer) state.get(AGE) < 3;
     }
 
     public boolean canGrow(World world, Random random, BlockPos pos, BlockState state) {
         return true;
+    }
+    public boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
+        return floor.isOf(Blocks.GRASS) || floor.isOf(Blocks.DIRT) || floor.isOf(Biomeslesnaturels.TUNDRA_GRASS)|| floor.isOf(Biomeslesnaturels.MUDDY_DIRT) || floor.isOf(Biomeslesnaturels.PATCHY_GRASS);
     }
 
     public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
@@ -86,6 +91,6 @@ public class GoatberryBush extends PlantBlock implements Fertilizable {
 
     static {
         AGE = Properties.AGE_3;
-        SHAPE = Block.createCuboidShape(0.0D, 0.1D, 0.0D, 16D, 12.0D, 16.0D);
+        SHAPE = Block.createCuboidShape(2.0D, 0.0D, 2.0D, 13.0D, 8.0D, 13.0D);
     }
 }

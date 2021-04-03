@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "biomeslesnaturels:block/sungrass"
+    "layer0": "biomeslesnaturels:block/wind_grass"
   }
 }

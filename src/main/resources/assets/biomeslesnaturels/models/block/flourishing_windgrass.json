@@ -1,0 +1,6 @@
+{
+	"parent": "block/cross",
+	"textures": {
+		"cross": "biomeslesnaturels:block/flourishing_wind_grass"
+	}
+}

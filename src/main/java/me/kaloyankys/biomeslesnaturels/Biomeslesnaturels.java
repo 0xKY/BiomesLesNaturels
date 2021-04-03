@@ -1,7 +1,8 @@
 package me.kaloyankys.biomeslesnaturels;
 
 import me.kaloyankys.biomeslesnaturels.block.*;
-import me.kaloyankys.biomeslesnaturels.item.OatGrassBlockItem;
+import me.kaloyankys.biomeslesnaturels.client.particle.MyDefaultParticleType;
+import me.kaloyankys.biomeslesnaturels.item.ModFoodComponents;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
@@ -11,7 +12,9 @@ import net.minecraft.block.Block;
 import net.minecraft.block.GrassBlock;
 import net.minecraft.block.Material;
 import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.particle.DefaultParticleType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
@@ -35,9 +38,14 @@ public class Biomeslesnaturels implements ModInitializer {
     public static final Block RUFFROCK = new Block(FabricBlockSettings.of(Material.PLANT).strength(0.5f));
     public static final Block GOATBERRY = new GoatberryBush(FabricBlockSettings.of(Material.PLANT).strength(0.5f));
     public static final Block MINT = new AbstractGrass(FabricBlockSettings.of(Material.PLANT).strength(0.5f));
+    public static final Block WINDGRASS = new AbstractGrass(FabricBlockSettings.of(Material.PLANT).strength(0.5f));
+    public static final Block FLOURISHING_WINDGRASS = new AbstractGrass(FabricBlockSettings.of(Material.PLANT).strength(0.5f));
     public static final Block TUNDRA_GRASS = new GrassBlock(FabricBlockSettings.of(Material.PLANT).strength(0.5f));
     public static final Block PATCHY_GRASS = new GrassBlock(FabricBlockSettings.of(Material.PLANT).strength(0.5f));
     public static final Block MUDDY_DIRT = new GrassBlock(FabricBlockSettings.of(Material.PLANT).strength(0.5f));
+    public static final Item OAT = new Item(new FabricItemSettings().group(ItemGroup.MISC));
+    public static final Item OAT_BREAD = new Item(new FabricItemSettings().food(ModFoodComponents.OAT_BREAD).group(ItemGroup.FOOD));
+    public static final Item GOATBERRY_BUNCH = new Item(new FabricItemSettings().food(ModFoodComponents.GOATBERRY_BUNCH).group(ItemGroup.FOOD));
     private static ConfiguredFeature<?, ?> LIMESTONE_PATCH = Feature.ORE
             .configure(new OreFeatureConfig(
                     OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
@@ -60,11 +68,12 @@ public class Biomeslesnaturels implements ModInitializer {
                     240)))//haha
             .spreadHorizontally()
             .repeat(128);
+    public static final DefaultParticleType GEYSER_BUBBLE = new MyDefaultParticleType(true);
 
     @Override
     public void onInitialize() {
         Registry.register(Registry.BLOCK, new Identifier("biomeslesnaturels", "oat_grass"), OAT_GRASS);
-        Registry.register(Registry.ITEM, new Identifier("biomeslesnaturels", "oat_grass"), new OatGrassBlockItem(OAT_GRASS, new FabricItemSettings().group(ItemGroup.DECORATIONS)));
+        Registry.register(Registry.ITEM, new Identifier("biomeslesnaturels", "oat_grass"), new BlockItem(OAT_GRASS, new FabricItemSettings().group(ItemGroup.DECORATIONS)));
         Registry.register(Registry.BLOCK, new Identifier("biomeslesnaturels", "oat_grass_small"), OAT_GRASS_SMALL);
         Registry.register(Registry.ITEM, new Identifier("biomeslesnaturels", "oat_grass_small"), new BlockItem(OAT_GRASS_SMALL, new FabricItemSettings().group(ItemGroup.DECORATIONS)));
         Registry.register(Registry.BLOCK, new Identifier("biomeslesnaturels", "limestone"), LIMESTONE);
@@ -97,5 +106,13 @@ public class Biomeslesnaturels implements ModInitializer {
         Registry.register(Registry.ITEM, new Identifier("biomeslesnaturels", "patchy_tundra_grass"), new BlockItem(PATCHY_GRASS, new FabricItemSettings().group(ItemGroup.DECORATIONS)));
         Registry.register(Registry.BLOCK, new Identifier("biomeslesnaturels", "muddy_dirt"), MUDDY_DIRT);
         Registry.register(Registry.ITEM, new Identifier("biomeslesnaturels", "muddy_dirt"), new BlockItem(MUDDY_DIRT, new FabricItemSettings().group(ItemGroup.DECORATIONS)));
+        Registry.register(Registry.BLOCK, new Identifier("biomeslesnaturels", "windgrass"), WINDGRASS);
+        Registry.register(Registry.ITEM, new Identifier("biomeslesnaturels", "windgrass"), new BlockItem(WINDGRASS, new FabricItemSettings().group(ItemGroup.DECORATIONS)));
+        Registry.register(Registry.BLOCK, new Identifier("biomeslesnaturels", "flourishing_windgrass"), FLOURISHING_WINDGRASS);
+        Registry.register(Registry.ITEM, new Identifier("biomeslesnaturels", "flourishing_windgrass"), new BlockItem(FLOURISHING_WINDGRASS, new FabricItemSettings()));
+        Registry.register(Registry.ITEM, new Identifier("biomeslesnaturels", "oat"), OAT);
+        Registry.register(Registry.ITEM, new Identifier("biomeslesnaturels", "oat_bread"), OAT_BREAD);
+        Registry.register(Registry.ITEM, new Identifier("biomeslesnaturels", "goatberry"), GOATBERRY_BUNCH);
+        Registry.register(Registry.PARTICLE_TYPE, new Identifier("biomeslesnaturels", "geyser_bubble"), GEYSER_BUBBLE);
     }
 }

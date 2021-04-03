@@ -1,6 +1,6 @@
 {
 	"parent": "block/cross",
 	"textures": {
-		"all": "biomeslesnaturels:block/sungrass"
+		"cross": "biomeslesnaturels:block/sungrass"
 	}
 }

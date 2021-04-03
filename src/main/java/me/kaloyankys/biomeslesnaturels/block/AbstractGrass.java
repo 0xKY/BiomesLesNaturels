@@ -12,7 +12,7 @@ public class AbstractGrass extends PlantBlock {
         super(settings);
     }
 
-    public static final VoxelShape SHAPE = Block.createCuboidShape(0D, 0D, 0D, 0D, 1D, 0D);
+    public static final VoxelShape SHAPE = Block.createCuboidShape(0D, 0D, 0D, 16D, 1D, 16D);
 
 
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
@@ -20,7 +20,7 @@ public class AbstractGrass extends PlantBlock {
     }
 
     public boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
-        return floor.isOf(Blocks.GRASS) || floor.isOf(Blocks.DIRT) || floor.isOf(Biomeslesnaturels.TUNDRA_GRASS);
+        return floor.isOf(Blocks.GRASS) || floor.isOf(Blocks.DIRT) || floor.isOf(Biomeslesnaturels.TUNDRA_GRASS)|| floor.isOf(Biomeslesnaturels.MUDDY_DIRT) || floor.isOf(Biomeslesnaturels.PATCHY_GRASS);
     }
     public boolean isTranslucent(BlockState state, BlockView world, BlockPos pos) {
         return state.getFluidState().isEmpty();

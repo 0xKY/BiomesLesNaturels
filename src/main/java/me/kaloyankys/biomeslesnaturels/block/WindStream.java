@@ -1,7 +1,9 @@
 package me.kaloyankys.biomeslesnaturels.block;
 
+import me.kaloyankys.biomeslesnaturels.Biomeslesnaturels;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.IceBlock;
 import net.minecraft.entity.Entity;
@@ -12,7 +14,7 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class WindStream extends IceBlock {
+public class WindStream extends Block {
     public WindStream(Settings settings) {
         super(settings);
     }
@@ -32,7 +34,7 @@ public class WindStream extends IceBlock {
 
     @Environment(EnvType.CLIENT)
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
-        if (random.nextInt(5) == 0) {
+        if (random.nextInt(2) == 0) {
             Direction direction = Direction.random(random);
             if (direction != Direction.UP) {
                 BlockPos blockPos = pos.offset(direction);
@@ -41,7 +43,7 @@ public class WindStream extends IceBlock {
                     double d = direction.getOffsetX() == 0 ? random.nextDouble() : 0.5D + (double) direction.getOffsetX() * 0.6D;
                     double e = direction.getOffsetY() == 0 ? random.nextDouble() : 0.5D + (double) direction.getOffsetY() * 0.6D;
                     double f = direction.getOffsetZ() == 0 ? random.nextDouble() : 0.5D + (double) direction.getOffsetZ() * 0.6D;
-                    world.addParticle(ParticleTypes.CAMPFIRE_SIGNAL_SMOKE, (double) pos.getX() + d, (double) pos.getY() + 1, (double) pos.getZ() + f, 0.0D, 0.3D, 0.0D);
+                    world.addParticle(Biomeslesnaturels.GEYSER_BUBBLE, (double) pos.getX() + d, (double) pos.getY() + 1, (double) pos.getZ() + f, 0.0D, 0.3D, 0.0D);
                 }
             }
         }

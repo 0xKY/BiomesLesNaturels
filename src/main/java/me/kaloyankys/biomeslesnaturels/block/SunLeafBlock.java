@@ -13,12 +13,12 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class SunLeafBlock extends FireBlock {
+public class SunLeafBlock extends PlantBlock {
         public SunLeafBlock(FabricBlockSettings group) {
             super(FabricBlockSettings.of(Material.PLANT).strength(0f).nonOpaque());
 
         }
-        public static final VoxelShape SHAPE = Block.createCuboidShape(0D, 0D, 0D, 0D, 0.1D, 0D);
+        public static final VoxelShape SHAPE = Block.createCuboidShape(0D, 0D, 0D, 16D, 1D, 16D);
 
 
         public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
