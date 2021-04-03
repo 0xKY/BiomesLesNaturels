@@ -16,7 +16,7 @@ public class OatGrassBlock extends TallPlantBlock {
         super(Settings.of(Material.PLANT).nonOpaque().strength(0f));
     }
 
-    public static final VoxelShape SHAPE = Block.createCuboidShape(0D, 0D, 0D, 1D, 16D, 1D);
+    public static final VoxelShape SHAPE = Block.createCuboidShape(8D, 0D, 8D, 10D, 16D, 10D);
 
 
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {

@@ -1,6 +1,7 @@
 package me.kaloyankys.biomeslesnaturels.block;
 
-import me.kaloyankys.biomeslesnaturels.Biomeslesnaturels;
+import me.kaloyankys.biomeslesnaturels.modinit.ModBlocks;
+import me.kaloyankys.biomeslesnaturels.modinit.ModItems;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.block.*;
@@ -34,7 +35,7 @@ public class GoatberryBush extends PlantBlock implements Fertilizable {
 
     @Environment(EnvType.CLIENT)
     public ItemStack getPickStack(BlockView world, BlockPos pos, BlockState state) {
-        return new ItemStack(Items.SWEET_BERRIES);
+        return new ItemStack(ModBlocks.GOATBERRY);
     }
 
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
@@ -60,7 +61,7 @@ public class GoatberryBush extends PlantBlock implements Fertilizable {
             return ActionResult.PASS;
         } else if (i > 1) {
             int j = 1 + world.random.nextInt(2);
-            dropStack(world, pos, new ItemStack(Items.SWEET_BERRIES, j + (bl ? 1 : 0)));
+            dropStack(world, pos, new ItemStack(ModItems.GOATBERRY_BUNCH, j + (bl ? 1 : 0)));
             world.playSound((PlayerEntity) null, pos, SoundEvents.ITEM_SWEET_BERRIES_PICK_FROM_BUSH, SoundCategory.BLOCKS, 1.0F, 0.8F + world.random.nextFloat() * 0.4F);
             world.setBlockState(pos, (BlockState) state.with(AGE, 1), 2);
             return ActionResult.success(world.isClient);
@@ -81,7 +82,7 @@ public class GoatberryBush extends PlantBlock implements Fertilizable {
         return true;
     }
     public boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
-        return floor.isOf(Blocks.GRASS) || floor.isOf(Blocks.DIRT) || floor.isOf(Biomeslesnaturels.TUNDRA_GRASS)|| floor.isOf(Biomeslesnaturels.MUDDY_DIRT) || floor.isOf(Biomeslesnaturels.PATCHY_GRASS);
+        return floor.isOf(Blocks.GRASS) || floor.isOf(Blocks.DIRT) || floor.isOf(ModBlocks.TUNDRA_GRASS)|| floor.isOf(ModBlocks.MUDDY_DIRT) || floor.isOf(ModBlocks.PATCHY_GRASS);
     }
 
     public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {

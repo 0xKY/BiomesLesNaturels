@@ -17,8 +17,8 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class WindStream extends Block {
-    public WindStream(Settings settings) {
+public class Geyser extends Block {
+    public Geyser(Settings settings) {
         super(settings);
     }
 

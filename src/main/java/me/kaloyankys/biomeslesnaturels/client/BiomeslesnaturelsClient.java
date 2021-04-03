@@ -1,6 +1,7 @@
 package me.kaloyankys.biomeslesnaturels.client;
 
 import me.kaloyankys.biomeslesnaturels.Biomeslesnaturels;
+import me.kaloyankys.biomeslesnaturels.modinit.ModBlocks;
 import me.kaloyankys.biomeslesnaturels.client.particle.GeyserBubbleParticle;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
@@ -15,7 +16,7 @@ public class BiomeslesnaturelsClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(),
-                Biomeslesnaturels.OAT_GRASS, Biomeslesnaturels.OAT_GRASS_SMALL, Biomeslesnaturels.SUNLEAF, Biomeslesnaturels.OAT_BUNDLE, Biomeslesnaturels.GOATBERRY, Biomeslesnaturels.MINT, Biomeslesnaturels.WINDGRASS, Biomeslesnaturels.FLOURISHING_WINDGRASS);
+                ModBlocks.OAT_GRASS, ModBlocks.OAT_GRASS_SMALL, ModBlocks.SUNLEAF, ModBlocks.OAT_BUNDLE, ModBlocks.GOATBERRY, ModBlocks.MINT, ModBlocks.WINDGRASS, ModBlocks.FLOURISHING_WINDGRASS);
         ParticleFactoryRegistry.getInstance().register(Biomeslesnaturels.GEYSER_BUBBLE, GeyserBubbleParticle.Factory::new);
     }
 }
