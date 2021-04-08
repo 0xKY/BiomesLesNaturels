@@ -2,6 +2,7 @@ package me.kaloyankys.biomeslesnaturels.modinit;
 
 import net.fabricmc.fabric.api.biome.v1.OverworldBiomes;
 import net.fabricmc.fabric.api.biome.v1.OverworldClimate;
+import net.minecraft.block.Blocks;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
@@ -20,9 +21,10 @@ public final class ModBiomes {
     public static final RegistryKey<Biome> WINDSWEPT_PEAKS_KEY = RegistryKey.of(Registry.BIOME_KEY, new Identifier("biomeslesnaturels", "windswept_peaks"));
         private static final ConfiguredSurfaceBuilder<TernarySurfaceConfig> WINDSWEPT_PEAKS_SURFACE_BUILDER = SurfaceBuilder.DEFAULT
                 .withConfig(new TernarySurfaceConfig(
-                        ModBlocks.TUNDRA_GRASS.getDefaultState(),
-                        ModBlocks.RUFFROCK.getDefaultState(),
-                        ModBlocks.MUDDY_DIRT.getDefaultState()));
+                        Blocks.GRASS_BLOCK.getDefaultState(),
+                        ModBlocks.MUDDY_DIRT.getDefaultState(),
+                        Blocks.STONE.getDefaultState()));
+
 
 
         private static final Biome WINDSWEPT_PEAKS = createWindsweptPeaks();
@@ -36,29 +38,30 @@ public final class ModBiomes {
             GenerationSettings.Builder generationSettings = new GenerationSettings.Builder();
             generationSettings.surfaceBuilder(WINDSWEPT_PEAKS_SURFACE_BUILDER);
             DefaultBiomeFeatures.addDefaultUndergroundStructures(generationSettings);
-            DefaultBiomeFeatures.addLandCarvers(generationSettings);
-            DefaultBiomeFeatures.addDefaultLakes(generationSettings);
             DefaultBiomeFeatures.addDungeons(generationSettings);
             DefaultBiomeFeatures.addMineables(generationSettings);
             DefaultBiomeFeatures.addDefaultOres(generationSettings);
             DefaultBiomeFeatures.addDefaultDisks(generationSettings);
-            DefaultBiomeFeatures.addSprings(generationSettings);
             DefaultBiomeFeatures.addFrozenTopLayer(generationSettings);
             DefaultBiomeFeatures.addMountainTrees(generationSettings);
+            DefaultBiomeFeatures.addPlainsFeatures(generationSettings);
+            DefaultBiomeFeatures.addPlainsTallGrass(generationSettings);
 
             return (new Biome.Builder())
                     .precipitation(Biome.Precipitation.SNOW)
                     .category(Biome.Category.ICY)
                     .depth(0.2F)
-                    .scale(1F)
-                    .temperature(0.2F)
-                    .downfall(0.9F)
+                    .scale(0.2F)
+                    .temperature(0)
+                    .downfall(5F)
                     .effects((new BiomeEffects.Builder())
-                            .waterColor(0x3f76e4)
-                            .waterFogColor(0x050533)
-                            .fogColor(0xc0d8ff)
+                            .waterColor(0x1e499e)
+                            .waterFogColor(0x1e499e)
+                            .fogColor(0xc8e4e6)
                             .skyColor(0x77adff)
+                            .grassColor(0xcf5011)
                             .build())
+
                     .spawnSettings(spawnSettings.build())
                     .generationSettings(generationSettings.build())
                     .build();
@@ -68,6 +71,7 @@ public final class ModBiomes {
 
         Registry.register(BuiltinRegistries.CONFIGURED_SURFACE_BUILDER, new Identifier("biomeslesnaturels", "windswept_peaks"), WINDSWEPT_PEAKS_SURFACE_BUILDER);
         Registry.register(BuiltinRegistries.BIOME, WINDSWEPT_PEAKS_KEY.getValue(), WINDSWEPT_PEAKS);
+        OverworldBiomes.addContinentalBiome(WINDSWEPT_PEAKS_KEY, OverworldClimate.COOL, 100D);
         OverworldBiomes.addContinentalBiome(WINDSWEPT_PEAKS_KEY, OverworldClimate.COOL, 100D);
 
     }

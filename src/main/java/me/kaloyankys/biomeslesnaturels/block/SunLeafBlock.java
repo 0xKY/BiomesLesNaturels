@@ -18,7 +18,7 @@ public class SunLeafBlock extends PlantBlock {
             super(FabricBlockSettings.of(Material.PLANT).strength(0f).nonOpaque());
 
         }
-        public static final VoxelShape SHAPE = Block.createCuboidShape(0D, 0D, 0D, 16D, 1D, 16D);
+        public static final VoxelShape SHAPE = Block.createCuboidShape(1D, 0D, 1D, 15D, 16D, 15D);
 
 
         public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {

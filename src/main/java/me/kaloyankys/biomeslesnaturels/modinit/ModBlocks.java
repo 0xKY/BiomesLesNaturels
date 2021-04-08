@@ -13,21 +13,19 @@ import net.minecraft.util.registry.Registry;
 
 public class ModBlocks {
 
-    public static final Block OAT_GRASS = new OatGrassBlock(FabricBlockSettings.of(Material.PLANT).strength(0f).nonOpaque());
-    public static final Block OAT_GRASS_SMALL = new OatGrassSmall(FabricBlockSettings.of(Material.PLANT).strength(0f).nonOpaque());
-    public static final Block LIMESTONE = new Block(FabricBlockSettings.of(Material.STONE).strength(0.5f));
-    public static final Block LAYERED_LIMESTONE = new Block(FabricBlockSettings.of(Material.STONE).strength(0.5f));
-    public static final Block SUNLEAF = new SunLeafBlock(FabricBlockSettings.of(Material.PLANT).strength(0.5f));
+    public static final Block OAT_GRASS = new OatGrassBlock(FabricBlockSettings.of(Material.PLANT).strength(0f).collidable(false));
+    public static final Block OAT_GRASS_SMALL = new OatGrassSmall(FabricBlockSettings.of(Material.PLANT).strength(0f).collidable(false));
+    public static final Block LIMESTONE = new Block(FabricBlockSettings.of(Material.STONE).strength(1.5f));
+    public static final Block LAYERED_LIMESTONE = new Block(FabricBlockSettings.of(Material.STONE).strength(1.5f));
+    public static final Block SUNLEAF = new SunLeafBlock(FabricBlockSettings.of(Material.PLANT).strength(0f).collidable(false));
     public static final Block OAT_BUNDLE = new Block(FabricBlockSettings.of(Material.PLANT).strength(0.5f));
-    public static final Block GEYSER = new Geyser(FabricBlockSettings.of(Material.PLANT).strength(0.5f));
-    public static final Block RUFFROCK = new Block(FabricBlockSettings.of(Material.PLANT).strength(0.5f));
+    public static final Block GEYSER = new Geyser(FabricBlockSettings.of(Material.PLANT).strength(1.7f));
+    public static final Block RUFFROCK = new Block(FabricBlockSettings.of(Material.PLANT).strength(1.7f));
     public static final Block GOATBERRY = new GoatberryBush(FabricBlockSettings.of(Material.PLANT).strength(0.5f));
-    public static final Block MINT = new AbstractGrass(FabricBlockSettings.of(Material.PLANT).strength(0.5f));
-    public static final Block WINDGRASS = new AbstractGrass(FabricBlockSettings.of(Material.PLANT).strength(0.5f));
-    public static final Block FLOURISHING_WINDGRASS = new AbstractGrass(FabricBlockSettings.of(Material.PLANT).strength(0.5f));
-    public static final Block TUNDRA_GRASS = new GrassBlock(FabricBlockSettings.of(Material.PLANT).strength(0.5f));
-    public static final Block PATCHY_GRASS = new GrassBlock(FabricBlockSettings.of(Material.PLANT).strength(0.5f));
-    public static final Block MUDDY_DIRT = new GrassBlock(FabricBlockSettings.of(Material.PLANT).strength(0.5f));
+    public static final Block MINT = new AbstractGrass(FabricBlockSettings.of(Material.PLANT).strength(0f).collidable(false));
+    public static final Block WINDGRASS = new AbstractGrass(FabricBlockSettings.of(Material.PLANT).strength(0f).collidable(false));
+    public static final Block FLOURISHING_WINDGRASS = new AbstractGrass(FabricBlockSettings.of(Material.PLANT).strength(0f).collidable(false));
+    public static final Block MUDDY_DIRT = new GrassBlock(FabricBlockSettings.of(Material.SOIL).strength(0.5f));
 
     public ModBlocks() {
 
@@ -51,10 +49,6 @@ public class ModBlocks {
         Registry.register(Registry.ITEM, new Identifier("biomeslesnaturels", "goatberry_bush"), new BlockItem(GOATBERRY, new FabricItemSettings().group(ItemGroup.DECORATIONS)));
         Registry.register(Registry.BLOCK, new Identifier("biomeslesnaturels", "mint"), MINT);
         Registry.register(Registry.ITEM, new Identifier("biomeslesnaturels", "mint"), new BlockItem(MINT, new FabricItemSettings().group(ItemGroup.DECORATIONS)));
-        Registry.register(Registry.BLOCK, new Identifier("biomeslesnaturels", "tundra_grass"), TUNDRA_GRASS);
-        Registry.register(Registry.ITEM, new Identifier("biomeslesnaturels", "tundra_grass"), new BlockItem(TUNDRA_GRASS, new FabricItemSettings().group(ItemGroup.DECORATIONS)));
-        Registry.register(Registry.BLOCK, new Identifier("biomeslesnaturels", "patchy_tundra_grass"), PATCHY_GRASS);
-        Registry.register(Registry.ITEM, new Identifier("biomeslesnaturels", "patchy_tundra_grass"), new BlockItem(PATCHY_GRASS, new FabricItemSettings().group(ItemGroup.DECORATIONS)));
         Registry.register(Registry.BLOCK, new Identifier("biomeslesnaturels", "muddy_dirt"), MUDDY_DIRT);
         Registry.register(Registry.ITEM, new Identifier("biomeslesnaturels", "muddy_dirt"), new BlockItem(MUDDY_DIRT, new FabricItemSettings().group(ItemGroup.DECORATIONS)));
         Registry.register(Registry.BLOCK, new Identifier("biomeslesnaturels", "windgrass"), WINDGRASS);

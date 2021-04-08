@@ -82,7 +82,7 @@ public class GoatberryBush extends PlantBlock implements Fertilizable {
         return true;
     }
     public boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
-        return floor.isOf(Blocks.GRASS) || floor.isOf(Blocks.DIRT) || floor.isOf(ModBlocks.TUNDRA_GRASS)|| floor.isOf(ModBlocks.MUDDY_DIRT) || floor.isOf(ModBlocks.PATCHY_GRASS);
+        return floor.isOf(Blocks.GRASS) || floor.isOf(Blocks.DIRT) || floor.isOf(Blocks.GRASS)|| floor.isOf(ModBlocks.MUDDY_DIRT) || floor.isOf(Blocks.PODZOL);
     }
 
     public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
