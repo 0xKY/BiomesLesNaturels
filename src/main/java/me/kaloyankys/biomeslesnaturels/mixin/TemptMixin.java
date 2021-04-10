@@ -23,6 +23,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
         public void onInitGoals(CallbackInfo ci) {
 
                 this.goalSelector.add(3, new TemptGoal(this, 2D, Ingredient.ofItems(ModItems.GOATBERRY_BUNCH), false));
+                this.goalSelector.add(3, new TemptGoal(this, 0.8D, Ingredient.ofItems(ModItems.OAT), false));
             }
         }
 

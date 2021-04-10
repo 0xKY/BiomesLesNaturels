@@ -23,7 +23,7 @@ public class ModBlocks {
     public static final Block RUFFROCK = new Block(FabricBlockSettings.of(Material.PLANT).strength(1.7f));
     public static final Block GOATBERRY = new GoatberryBush(FabricBlockSettings.of(Material.PLANT).strength(0.5f));
     public static final Block MINT = new AbstractGrass(FabricBlockSettings.of(Material.PLANT).strength(0f).collidable(false));
-    public static final Block WINDGRASS = new AbstractGrass(FabricBlockSettings.of(Material.PLANT).strength(0f).collidable(false));
+    public static final Block WINDGRASS = new WindBlock(FabricBlockSettings.of(Material.AIR).strength(0f).collidable(false).velocityMultiplier(3f));
     public static final Block FLOURISHING_WINDGRASS = new AbstractGrass(FabricBlockSettings.of(Material.PLANT).strength(0f).collidable(false));
     public static final Block MUDDY_DIRT = new GrassBlock(FabricBlockSettings.of(Material.SOIL).strength(0.5f));
 
