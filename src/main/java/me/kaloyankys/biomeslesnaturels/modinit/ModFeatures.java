@@ -57,7 +57,7 @@ public class ModFeatures {
                     0,
                     160)))//haha
             .spreadHorizontally()
-            .repeat(16);
+            .repeat(32);
 
     public ModFeatures() {
 

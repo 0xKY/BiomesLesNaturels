@@ -22,7 +22,7 @@ public final class ModBiomes {
         private static final ConfiguredSurfaceBuilder<TernarySurfaceConfig> WINDSWEPT_PEAKS_SURFACE_BUILDER = SurfaceBuilder.DEFAULT
                 .withConfig(new TernarySurfaceConfig(
                         Blocks.GRASS_BLOCK.getDefaultState(),
-                        ModBlocks.MUDDY_DIRT.getDefaultState(),
+                        Blocks.DIRT.getDefaultState(),
                         Blocks.STONE.getDefaultState()));
 
 
@@ -50,8 +50,8 @@ public final class ModBiomes {
             return (new Biome.Builder())
                     .precipitation(Biome.Precipitation.SNOW)
                     .category(Biome.Category.ICY)
-                    .depth(0.2F)
-                    .scale(0.2F)
+                    .depth(1.5F)
+                    .scale(0.25F)
                     .temperature(0)
                     .downfall(5F)
                     .effects((new BiomeEffects.Builder())
