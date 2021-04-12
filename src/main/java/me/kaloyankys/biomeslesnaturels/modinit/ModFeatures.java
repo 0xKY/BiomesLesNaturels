@@ -1,6 +1,6 @@
 package me.kaloyankys.biomeslesnaturels.modinit;
 
-import me.kaloyankys.biomeslesnaturels.world.WindGrassFeature;
+import me.kaloyankys.biomeslesnaturels.world.WindFeature;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.minecraft.block.Blocks;
@@ -50,14 +50,14 @@ public class ModFeatures {
                     240)))//haha
             .spreadHorizontally()
             .repeat(96);
-    private static final Feature<DefaultFeatureConfig> WINDGRASS_FEATURE = new WindGrassFeature(DefaultFeatureConfig.CODEC);
-    public static final ConfiguredFeature<?, ?> WIND_GRASS_CONFIGURED = WINDGRASS_FEATURE.configure(FeatureConfig.DEFAULT)
+    private static final Feature<DefaultFeatureConfig> WIND_FEATURE = new WindFeature(DefaultFeatureConfig.CODEC);
+    public static final ConfiguredFeature<?, ?> WIND_CONFIGURED = WIND_FEATURE.configure(FeatureConfig.DEFAULT)
             .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(
                     0,
                     0,
                     160)))//haha
             .spreadHorizontally()
-            .repeat(32);
+            .repeat(16);
 
     public ModFeatures() {
 
@@ -73,10 +73,10 @@ public class ModFeatures {
                 new Identifier("biomeslesnaturels", "mud_patch"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, mudPatch.getValue(), MUD_PATCH);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(ModBiomes.WINDSWEPT_PEAKS_KEY, BiomeKeys.MOUNTAINS, BiomeKeys.SNOWY_MOUNTAINS, BiomeKeys.WOODED_MOUNTAINS), GenerationStep.Feature.UNDERGROUND_ORES, mudPatch);
-        Registry.register(Registry.FEATURE, new Identifier("biomeslesnaturels", "wind_grass"), WINDGRASS_FEATURE);
+        Registry.register(Registry.FEATURE, new Identifier("biomeslesnaturels", "wind_grass"), WIND_FEATURE);
         RegistryKey<ConfiguredFeature<?, ?>> windGrass = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
                 new Identifier("biomeslesnaturels", "wind_grass_configured"));
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, windGrass.getValue(), WIND_GRASS_CONFIGURED);
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, windGrass.getValue(), WIND_CONFIGURED);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(ModBiomes.WINDSWEPT_PEAKS_KEY), GenerationStep.Feature.VEGETAL_DECORATION, windGrass);
     }
 }

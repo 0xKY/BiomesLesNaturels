@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=upper": {
+      "model": "biomeslesnaturels:block/ebony_top"
+    },
+    "half=lower": {
+      "model": "biomeslesnaturels:block/ebony_trunk"
+    }
+  }
+}

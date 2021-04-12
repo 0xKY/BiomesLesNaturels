@@ -23,15 +23,15 @@ public class WindBlock extends Block {
 
     public static final VoxelShape SHAPE = Block.createCuboidShape(0D, 1D, 0D, 32D, 32D, 32D);
 
+
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        entity.setVelocity(1, 0, 0);
+        entity.setVelocity(1, 0.1, 0);
     }
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return SHAPE;
     }
-
     @Environment(EnvType.CLIENT)
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
         if (random.nextInt(2) == 0) {

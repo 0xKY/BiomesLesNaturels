@@ -52,7 +52,7 @@ public final class ModBiomes {
                     .category(Biome.Category.ICY)
                     .depth(1.5F)
                     .scale(0.25F)
-                    .temperature(0)
+                    .temperature(0F)
                     .downfall(5F)
                     .effects((new BiomeEffects.Builder())
                             .waterColor(0x1e499e)

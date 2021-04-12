@@ -18,7 +18,7 @@ public class LeafParticle extends AscendingParticle {
     @Override
     public float getSize(float tickDelta) {
         float ageDelta = ((float)this.age + tickDelta) / ((float)this.maxAge / 2);
-        return this.scale * (8.0F - ageDelta) * 2.0F;
+        return this.scale * (8.0F - ageDelta) * 4.0F;
     }
 
     @Environment(EnvType.CLIENT)
@@ -31,7 +31,7 @@ public class LeafParticle extends AscendingParticle {
 
         @Override
         public Particle createParticle(DefaultParticleType defaultParticleType, ClientWorld clientWorld, double x, double y, double z, double velocityX, double velocityY, double velocityZ) {
-            return new LeafParticle(clientWorld, x, y, z, velocityX, velocityY, velocityZ, 0.5F, this.spriteProvider);
+            return new LeafParticle(clientWorld, x, y, z, velocityX, velocityY, velocityZ, 0.2F, this.spriteProvider);
         }
     }
 }

@@ -12,8 +12,8 @@ import net.minecraft.world.gen.feature.FeatureConfig;
 
 import java.util.Random;
 
-public class WindGrassFeature extends Feature {
-    public WindGrassFeature(Codec configCodec) {
+public class WindFeature extends Feature {
+    public WindFeature(Codec configCodec) {
         super(configCodec);
     }
     @Override
@@ -23,7 +23,7 @@ public class WindGrassFeature extends Feature {
         Direction offset = Direction.NORTH;
 
         int y = 0; {
-            world.setBlockState(topPos.up(y), ModBlocks.WINDGRASS.getDefaultState(), 1);
+            world.setBlockState(topPos.up(y), ModBlocks.WIND.getDefaultState(), 1);
         }
 
         return true;

@@ -23,9 +23,10 @@ public class ModBlocks {
     public static final Block RUFFROCK = new Block(FabricBlockSettings.of(Material.PLANT).strength(1.7f));
     public static final Block GOATBERRY = new GoatberryBush(FabricBlockSettings.of(Material.PLANT).strength(0.5f));
     public static final Block MINT = new AbstractGrass(FabricBlockSettings.of(Material.PLANT).strength(0f).collidable(false));
-    public static final Block WINDGRASS = new WindBlock(FabricBlockSettings.of(Material.AIR).strength(0f).collidable(false).velocityMultiplier(3f));
+    public static final Block WIND = new WindBlock(FabricBlockSettings.of(Material.AIR).strength(0f).collidable(false));
     public static final Block FLOURISHING_WINDGRASS = new AbstractGrass(FabricBlockSettings.of(Material.PLANT).strength(0f).collidable(false));
     public static final Block MUDDY_DIRT = new GrassBlock(FabricBlockSettings.of(Material.SOIL).strength(0.5f));
+    public static final Block EBONY_TREE = new EbonyTree(FabricBlockSettings.of(Material.WOOD).strength(0.9f));
 
     public ModBlocks() {
 
@@ -51,10 +52,12 @@ public class ModBlocks {
         Registry.register(Registry.ITEM, new Identifier("biomeslesnaturels", "mint"), new BlockItem(MINT, new FabricItemSettings().group(ItemGroup.DECORATIONS)));
         Registry.register(Registry.BLOCK, new Identifier("biomeslesnaturels", "muddy_dirt"), MUDDY_DIRT);
         Registry.register(Registry.ITEM, new Identifier("biomeslesnaturels", "muddy_dirt"), new BlockItem(MUDDY_DIRT, new FabricItemSettings().group(ItemGroup.DECORATIONS)));
-        Registry.register(Registry.BLOCK, new Identifier("biomeslesnaturels", "windgrass"), WINDGRASS);
-        Registry.register(Registry.ITEM, new Identifier("biomeslesnaturels", "windgrass"), new BlockItem(WINDGRASS, new FabricItemSettings().group(ItemGroup.DECORATIONS)));
+        Registry.register(Registry.BLOCK, new Identifier("biomeslesnaturels", "wind"), WIND);
+        Registry.register(Registry.ITEM, new Identifier("biomeslesnaturels", "wind"), new BlockItem(WIND, new FabricItemSettings()));
         Registry.register(Registry.BLOCK, new Identifier("biomeslesnaturels", "flourishing_windgrass"), FLOURISHING_WINDGRASS);
         Registry.register(Registry.ITEM, new Identifier("biomeslesnaturels", "flourishing_windgrass"), new BlockItem(FLOURISHING_WINDGRASS, new FabricItemSettings()));
+        Registry.register(Registry.BLOCK, new Identifier("biomeslesnaturels", "ebony_tree"), EBONY_TREE);
+        Registry.register(Registry.ITEM, new Identifier("biomeslesnaturels", "ebony_tree"), new BlockItem(EBONY_TREE, new FabricItemSettings().group(ItemGroup.DECORATIONS)));
 
     }
 }

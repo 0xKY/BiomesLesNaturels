@@ -17,7 +17,7 @@ public class BiomeslesnaturelsClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(),
-                ModBlocks.OAT_GRASS, ModBlocks.OAT_GRASS_SMALL, ModBlocks.SUNLEAF, ModBlocks.OAT_BUNDLE, ModBlocks.GOATBERRY, ModBlocks.MINT, ModBlocks.WINDGRASS, ModBlocks.FLOURISHING_WINDGRASS);
+                ModBlocks.OAT_GRASS, ModBlocks.OAT_GRASS_SMALL, ModBlocks.SUNLEAF, ModBlocks.OAT_BUNDLE, ModBlocks.GOATBERRY, ModBlocks.MINT, ModBlocks.WIND, ModBlocks.FLOURISHING_WINDGRASS, ModBlocks.EBONY_TREE);
         ParticleFactoryRegistry.getInstance().register(Biomeslesnaturels.GEYSER_BUBBLE, GeyserBubbleParticle.Factory::new);
         ParticleFactoryRegistry.getInstance().register(Biomeslesnaturels.LEAF, LeafParticle.Factory::new);
     }
