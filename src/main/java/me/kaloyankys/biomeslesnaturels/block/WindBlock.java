@@ -6,6 +6,7 @@ import net.fabricmc.api.Environment;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
+import net.minecraft.client.particle.Particle;
 import net.minecraft.entity.Entity;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.util.math.BlockPos;
@@ -26,7 +27,8 @@ public class WindBlock extends Block {
 
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        entity.setVelocity(1, 0.1, 0);
+        if(!entity.canFly())
+        entity.setVelocity(1, 0.2, 0);
     }
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
@@ -43,8 +45,7 @@ public class WindBlock extends Block {
                     double d = direction.getOffsetX() == 0 ? random.nextDouble() : 0.5D + (double) direction.getOffsetX() * 0.6D;
                     double e = direction.getOffsetY() == 0 ? random.nextDouble() : 0.5D + (double) direction.getOffsetY() * 0.6D;
                     double f = direction.getOffsetZ() == 0 ? random.nextDouble() : 0.5D + (double) direction.getOffsetZ() * 0.6D;
-                    world.addParticle(Biomeslesnaturels.LEAF, (double) pos.getX() + d, (double) pos.getY() + 1, (double) pos.getZ() + f, 1D, -0.1D, 0.001D);
-                    world.addParticle(ParticleTypes.POOF, (double) pos.getX() + d, (double) pos.getY() + 1, (double) pos.getZ() + f, 0.9D, -0.1D, 0.001D);
+                    world.addParticle(ParticleTypes.POOF, (double) pos.getX() + d, (double) pos.getY() + 1, (double) pos.getZ() + f, 1D, -0.1D, 0.001D);
                 }
             }
         }

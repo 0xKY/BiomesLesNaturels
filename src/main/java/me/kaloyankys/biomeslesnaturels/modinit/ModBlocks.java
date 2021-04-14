@@ -26,7 +26,8 @@ public class ModBlocks {
     public static final Block WIND = new WindBlock(FabricBlockSettings.of(Material.AIR).strength(0f).collidable(false));
     public static final Block FLOURISHING_WINDGRASS = new AbstractGrass(FabricBlockSettings.of(Material.PLANT).strength(0f).collidable(false));
     public static final Block MUDDY_DIRT = new GrassBlock(FabricBlockSettings.of(Material.SOIL).strength(0.5f));
-    public static final Block EBONY_TREE = new EbonyTree(FabricBlockSettings.of(Material.WOOD).strength(0.9f));
+    public static final Block EBONY_TREE = new EbonyTree(FabricBlockSettings.of(Material.WOOD).strength(0.9f).collidable(false));
+    public static final Block EDELWEISS = new AbstractGrass(FabricBlockSettings.of(Material.WOOD).strength(0.9f).collidable(false));
 
     public ModBlocks() {
 
@@ -58,6 +59,8 @@ public class ModBlocks {
         Registry.register(Registry.ITEM, new Identifier("biomeslesnaturels", "flourishing_windgrass"), new BlockItem(FLOURISHING_WINDGRASS, new FabricItemSettings()));
         Registry.register(Registry.BLOCK, new Identifier("biomeslesnaturels", "ebony_tree"), EBONY_TREE);
         Registry.register(Registry.ITEM, new Identifier("biomeslesnaturels", "ebony_tree"), new BlockItem(EBONY_TREE, new FabricItemSettings().group(ItemGroup.DECORATIONS)));
+        Registry.register(Registry.BLOCK, new Identifier("biomeslesnaturels", "edelweiss"), EDELWEISS);
+        Registry.register(Registry.ITEM, new Identifier("biomeslesnaturels", "edelweiss"), new BlockItem(EDELWEISS, new FabricItemSettings().group(ItemGroup.DECORATIONS)));
 
     }
 }

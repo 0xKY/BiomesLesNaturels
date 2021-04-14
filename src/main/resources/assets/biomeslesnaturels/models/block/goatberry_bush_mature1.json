@@ -4,7 +4,7 @@
 		"0": "biomeslesnaturels:block/goatberry_mature1",
 		"1": "biomeslesnaturels:block/mature_droopleaves",
 		"2": "biomeslesnaturels:block/mature_twig",
-		"3": "biomeslesnaturels:block/goatberry_droopleaves",
+		"3": "biomeslesnaturels:block/mature_droopleaves",
 		"particle": "biomeslesnaturels:block/goatberry_mature1"
 	},
 	"elements": [

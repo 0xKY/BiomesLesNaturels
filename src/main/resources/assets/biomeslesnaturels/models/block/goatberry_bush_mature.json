@@ -1,9 +1,9 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"1": "biomeslesnaturels:block/goatberry_droopleaves",
+		"1": "biomeslesnaturels:block/droopleaves",
 		"2": "biomeslesnaturels:block/goatberry_stem",
-		"3": "biomeslesnaturels:block/goatberry_mature",
+		"3": "biomeslesnaturels:block/goatberry_bush",
 		"particle": "biomeslesnaturels:block/goatberry_bush"
 	},
 	"elements": [

@@ -2,7 +2,7 @@
 	"credit": "Made with Blockbench",
 	"textures": {
 		"0": "biomeslesnaturels:block/goatberry_mature1",
-		"1": "biomeslesnaturels:block/mature_droopleaves",
+		"1": "biomeslesnaturels:block/droopleaves_mature_1",
 		"2": "biomeslesnaturels:block/mature_twig",
 		"particle": "biomeslesnaturels:block/goatberry_mature1"
 	},

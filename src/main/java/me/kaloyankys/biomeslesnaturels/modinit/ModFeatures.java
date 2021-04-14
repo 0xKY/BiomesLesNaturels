@@ -1,19 +1,19 @@
 package me.kaloyankys.biomeslesnaturels.modinit;
 
-import me.kaloyankys.biomeslesnaturels.world.WindFeature;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
-import net.minecraft.block.Blocks;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.biome.BiomeKeys;
 import net.minecraft.world.gen.GenerationStep;
-import net.minecraft.world.gen.decorator.ChanceDecoratorConfig;
 import net.minecraft.world.gen.decorator.Decorator;
 import net.minecraft.world.gen.decorator.RangeDecoratorConfig;
 import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.gen.placer.DoublePlantPlacer;
+import net.minecraft.world.gen.placer.SimpleBlockPlacer;
+import net.minecraft.world.gen.stateprovider.SimpleBlockStateProvider;
 
 public class ModFeatures {
 
@@ -50,17 +50,16 @@ public class ModFeatures {
                     240)))//haha
             .spreadHorizontally()
             .repeat(96);
-    private static final Feature<DefaultFeatureConfig> WIND_FEATURE = new WindFeature(DefaultFeatureConfig.CODEC);
-    public static final ConfiguredFeature<?, ?> WIND_CONFIGURED = WIND_FEATURE.configure(FeatureConfig.DEFAULT)
-            .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(
-                    0,
-                    0,
-                    160)))//haha
-            .spreadHorizontally()
-            .repeat(16);
+    public static final ConfiguredFeature<?, ?> GOATBERRY_FEATURE = Feature.RANDOM_PATCH.configure((new RandomPatchFeatureConfig.Builder
+            (new SimpleBlockStateProvider(ModBlocks.GOATBERRY.getDefaultState()), SimpleBlockPlacer.INSTANCE)).tries(1).build());
+    public static final ConfiguredFeature<?, ?> EBONY_TREE_FEATURE = Feature.RANDOM_PATCH.configure((new RandomPatchFeatureConfig.Builder
+            (new SimpleBlockStateProvider(ModBlocks.EBONY_TREE.getDefaultState()), new DoublePlantPlacer())).tries(7).build());
+    public static final ConfiguredFeature<?, ?> WIND_FEATURE = Feature.RANDOM_PATCH.configure((new RandomPatchFeatureConfig.Builder
+            (new SimpleBlockStateProvider(ModBlocks.WIND.getDefaultState()), SimpleBlockPlacer.INSTANCE)).build());
 
     public ModFeatures() {
 
+        //Stone Patches
         RegistryKey<ConfiguredFeature<?, ?>> limestonePatch = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
                 new Identifier("biomeslesnaturels", "limestone_patch"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, limestonePatch.getValue(), LIMESTONE_PATCH);
@@ -73,10 +72,19 @@ public class ModFeatures {
                 new Identifier("biomeslesnaturels", "mud_patch"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, mudPatch.getValue(), MUD_PATCH);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(ModBiomes.WINDSWEPT_PEAKS_KEY, BiomeKeys.MOUNTAINS, BiomeKeys.SNOWY_MOUNTAINS, BiomeKeys.WOODED_MOUNTAINS), GenerationStep.Feature.UNDERGROUND_ORES, mudPatch);
-        Registry.register(Registry.FEATURE, new Identifier("biomeslesnaturels", "wind_grass"), WIND_FEATURE);
-        RegistryKey<ConfiguredFeature<?, ?>> windGrass = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
-                new Identifier("biomeslesnaturels", "wind_grass_configured"));
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, windGrass.getValue(), WIND_CONFIGURED);
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(ModBiomes.WINDSWEPT_PEAKS_KEY), GenerationStep.Feature.VEGETAL_DECORATION, windGrass);
+
+        //Random Patches
+        RegistryKey<ConfiguredFeature<?, ?>> goatBerry = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
+                new Identifier("biomeslesnaturels", "goatberry_feature_configured"));
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, goatBerry.getValue(), GOATBERRY_FEATURE);
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(ModBiomes.WINDSWEPT_PEAKS_KEY), GenerationStep.Feature.VEGETAL_DECORATION, goatBerry);
+        RegistryKey<ConfiguredFeature<?, ?>> ebonyTree = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
+                new Identifier("biomeslesnaturels", "ebony_tree_feature_configured"));
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, ebonyTree.getValue(), EBONY_TREE_FEATURE);
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(ModBiomes.WINDSWEPT_PEAKS_KEY), GenerationStep.Feature.VEGETAL_DECORATION, ebonyTree);
+        RegistryKey<ConfiguredFeature<?, ?>> windFeature = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
+                new Identifier("biomeslesnaturels", "wind_feature_configured"));
+       Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, windFeature.getValue(), WIND_FEATURE);
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(ModBiomes.WINDSWEPT_PEAKS_KEY), GenerationStep.Feature.VEGETAL_DECORATION, windFeature);
     }
 }
