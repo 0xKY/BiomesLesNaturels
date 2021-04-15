@@ -21,9 +21,9 @@ public final class ModBiomes {
     public static final RegistryKey<Biome> WINDSWEPT_PEAKS_KEY = RegistryKey.of(Registry.BIOME_KEY, new Identifier("biomeslesnaturels", "windswept_peaks"));
         private static final ConfiguredSurfaceBuilder<TernarySurfaceConfig> WINDSWEPT_PEAKS_SURFACE_BUILDER = SurfaceBuilder.DEFAULT
                 .withConfig(new TernarySurfaceConfig(
-                        Blocks.GRASS_BLOCK.getDefaultState(),
-                        Blocks.DIRT.getDefaultState(),
-                        Blocks.STONE.getDefaultState()));
+                        Blocks.STONE.getDefaultState(),
+                        ModBlocks.MUDDY_DIRT.getDefaultState(),
+                        ModBlocks.RUFFROCK.getDefaultState()));
 
 
 

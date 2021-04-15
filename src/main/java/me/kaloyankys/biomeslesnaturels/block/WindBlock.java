@@ -27,7 +27,6 @@ public class WindBlock extends Block {
 
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        if(!entity.canFly())
         entity.setVelocity(1, 0.2, 0);
     }
     @Override

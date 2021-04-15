@@ -14,6 +14,7 @@ public class Biomeslesnaturels implements ModInitializer {
 //Particles
     public static final DefaultParticleType GEYSER_BUBBLE = new MyDefaultParticleType(true);
     public static final DefaultParticleType LEAF = new MyDefaultParticleType(true);
+    public static final DefaultParticleType WIND_PUFF = new MyDefaultParticleType(true);
 
     @Override
     public void onInitialize() {
@@ -25,5 +26,6 @@ public class Biomeslesnaturels implements ModInitializer {
         //Particles
         Registry.register(Registry.PARTICLE_TYPE, new Identifier("biomeslesnaturels", "geyser_bubble"), GEYSER_BUBBLE);
         Registry.register(Registry.PARTICLE_TYPE, new Identifier("biomeslesnaturels", "leaf"), LEAF);
+        Registry.register(Registry.PARTICLE_TYPE, new Identifier("biomeslesnaturels", "wind_puff"), WIND_PUFF);
     }
 }
