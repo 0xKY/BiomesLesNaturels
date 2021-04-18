@@ -1,3 +1,24 @@
 {
-  "block.biomeslesnaturels.silt": "Silt"
+  "block.biomeslesnaturels.wind": "Wind",
+  "block.biomeslesnaturels.edelweiss": "Edelweiss",
+  "block.biomeslesnaturels.ruffrock": "Ruffrock",
+  "block.biomeslesnaturels.cobbled_ruffrock": "Cobbled Ruffrock",
+  "block.biomeslesnaturels.polished_ruffrock": "Polished Ruffrock",
+  "block.biomeslesnaturels.polished_ruffrock_tiles": "Polished Ruffrock Tiles",
+  "block.biomeslesnaturels.limestone": "Limestone",
+  "block.biomeslesnaturels.layered_limestone": "Layered Limestone",
+  "block.biomeslesnaturels.limestone_bricks": "Limestone Bricks",
+  "block.biomeslesnaturels.smooth_limestone": "Smooth Limestone",
+  "block.biomeslesnaturels.oatgrass": "Oat Grass",
+  "block.biomeslesnaturels.small_oatgrass": "Small Oat Grass",
+  "block.biomeslesnaturels.mint": "Mint",
+  "block.biomeslesnaturels.muddy_dirt": "Muddy Dirt",
+  "block.biomeslesnaturels.ebony_tree": "Ebony Tree",
+  "block.biomeslesnaturels.sunleaf": "Sunleaf",
+  "block.biomeslesnaturels.oat_bundle": "Oat Bundle",
+  "block.biomeslesnaturels.geyser": "Geyser",
+  "block.biomeslesnaturels.goatberry_bush": "Goatberry Bush",
+  "item.biomeslesnaturels.goatberry": "Goatberry",
+  "item.biomeslesnaturels.oat": "Oat",
+  "item.biomeslesnaturels.oat_bread": "Oat Bread"
 }
