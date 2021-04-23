@@ -91,6 +91,8 @@ public class ModFeatures {
             (new SimpleBlockStateProvider(ModBlocks.OAT_GRASS_SMALL.getDefaultState()), SimpleBlockPlacer.INSTANCE)).tries(10).build());
     public static final ConfiguredFeature<?, ?> EDELWEISS_FEATURE = Feature.RANDOM_PATCH.configure((new RandomPatchFeatureConfig.Builder
             (new SimpleBlockStateProvider(ModBlocks.EDELWEISS.getDefaultState()), SimpleBlockPlacer.INSTANCE)).tries(30).build());
+    public static final ConfiguredFeature<?, ?> MINT_FEATURE = Feature.RANDOM_PATCH.configure((new RandomPatchFeatureConfig.Builder
+            (new SimpleBlockStateProvider(ModBlocks.MINT.getDefaultState()), SimpleBlockPlacer.INSTANCE)).tries(50).build());
 
     public ModFeatures() {
 
@@ -135,6 +137,10 @@ public class ModFeatures {
                 new Identifier("biomeslesnaturels", "geyser_patch"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE,  geyserPatch.getValue(), GEYSER_PATCH);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(ModBiomes.WINDSWEPT_PEAKS_KEY), GenerationStep.Feature.VEGETAL_DECORATION,  geyserPatch);
+        RegistryKey<ConfiguredFeature<?, ?>> mintPatch = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
+                new Identifier("biomeslesnaturels", "mint_patch"));
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE,  mintPatch.getValue(), MINT_FEATURE);
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(ModBiomes.WINDSWEPT_PEAKS_KEY), GenerationStep.Feature.VEGETAL_DECORATION,  mintPatch);
 
         RegistryKey<ConfiguredFeature<?, ?>> sunleafFeature = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
                 new Identifier("biomeslesnaturels", "sunleaf_feature"));
