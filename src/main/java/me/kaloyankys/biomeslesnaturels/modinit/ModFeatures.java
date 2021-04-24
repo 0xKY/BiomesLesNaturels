@@ -23,13 +23,13 @@ public class ModFeatures {
             .configure(new OreFeatureConfig(
                     OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
                     ModBlocks.LIMESTONE.getDefaultState(),
-                    50))
+                    64))
             .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(
                     0,
                     0,
                     64)))
             .spreadHorizontally()
-            .repeat(50);
+            .repeat(90);
     private static ConfiguredFeature<?, ?> GRASSY_PATCH = Feature.ORE
             .configure(new OreFeatureConfig(
                     OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,

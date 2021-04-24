@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "bioemslesnaturels:oat"
+    }
+  },
+  "result": {
+    "item": "biomeslesnaturels:oat_bundle",
+    "count": 1
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "biomelesnaturels:limestone"
+  },
+  "result": "biomeslesnaturels:smooth_limestone",
+  "count": 1
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "biomeslesnaturels:oat"
+    }
+  },
+  "result": {
+    "item": "biomeslesnaturels:oat_bread",
+    "count": 1
+  }
+}

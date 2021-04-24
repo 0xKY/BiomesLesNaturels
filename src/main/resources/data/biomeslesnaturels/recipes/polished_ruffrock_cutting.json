@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "biomeslesnaturels:ruffrock"
+  },
+  "result": "biomeslesnaturels:polished_ruffrock",
+  "count": 1
+}

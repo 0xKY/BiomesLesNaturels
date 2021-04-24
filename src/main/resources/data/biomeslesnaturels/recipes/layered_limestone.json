@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "bioemslesnaturels:limestone"
+    }
+  },
+  "result": {
+    "item": "biomeslesnaturels:layered_limestone",
+    "count": 2
+  }
+}

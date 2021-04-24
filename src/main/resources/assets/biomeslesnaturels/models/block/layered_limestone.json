@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "biomeslesnaturels:block/cobbled_limestone"
+    "all": "biomeslesnaturels:block/layered_limestone"
   }
 }

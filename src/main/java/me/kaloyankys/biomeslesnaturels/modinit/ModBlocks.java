@@ -13,25 +13,25 @@ import net.minecraft.util.registry.Registry;
 
 public class ModBlocks {
 
-    public static final Block OAT_GRASS = new OatGrassBlock(FabricBlockSettings.of(Material.PLANT).breakInstantly().noCollision());
-    public static final Block OAT_GRASS_SMALL = new OatGrassSmall(FabricBlockSettings.of(Material.PLANT).breakInstantly().noCollision());
-    public static final Block LIMESTONE = new Block(FabricBlockSettings.of(Material.STONE).strength(1.5f).breakByTool(FabricToolTags.PICKAXES, 1));
-    public static final Block LAYERED_LIMESTONE = new Block(FabricBlockSettings.of(Material.STONE).strength(1.5f).breakByTool(FabricToolTags.PICKAXES, 1));
-    public static final Block SMOOTH_LIMESTONE = new Block(FabricBlockSettings.of(Material.STONE).strength(1.5f).breakByTool(FabricToolTags.PICKAXES, 1));
-    public static final Block SMOOTH_LIMESTONE_BRICKS = new Block(FabricBlockSettings.of(Material.STONE).strength(1.5f).breakByTool(FabricToolTags.PICKAXES, 1));
+    public static final Block OAT_GRASS = new OatGrassBlock(FabricBlockSettings.of(Material.PLANT).breakInstantly().collidable(false));
+    public static final Block OAT_GRASS_SMALL = new OatGrassSmall(FabricBlockSettings.of(Material.PLANT).breakInstantly().collidable(false));
+    public static final Block LIMESTONE = new Block(FabricBlockSettings.of(Material.STONE).strength(3.0f).breakByTool(FabricToolTags.PICKAXES, 2));
+    public static final Block LAYERED_LIMESTONE = new Block(FabricBlockSettings.of(Material.STONE).strength(3.0f).breakByTool(FabricToolTags.PICKAXES, 2));
+    public static final Block SMOOTH_LIMESTONE = new Block(FabricBlockSettings.of(Material.STONE).strength(3.0f).breakByTool(FabricToolTags.PICKAXES, 2));
+    public static final Block SMOOTH_LIMESTONE_BRICKS = new Block(FabricBlockSettings.of(Material.STONE).strength(3.0f).breakByTool(FabricToolTags.PICKAXES, 2));
     public static final Block SUNLEAF = new SunLeafBlock(FabricBlockSettings.of(Material.PLANT).breakInstantly().noCollision());
-    public static final Block OAT_BUNDLE = new Block(FabricBlockSettings.of(Material.PLANT).strength(0.5f).breakByTool(FabricToolTags.HOES, 1));
-    public static final Block GEYSER = new Geyser(FabricBlockSettings.of(Material.PLANT).strength(1.7f).breakByTool(FabricToolTags.PICKAXES, 1));
-    public static final Block RUFFROCK = new Block(FabricBlockSettings.of(Material.PLANT).strength(1.7f).breakByTool(FabricToolTags.PICKAXES, 1));
-    public static final Block POLISHED_RUFFROCK = new Block(FabricBlockSettings.of(Material.PLANT).strength(1.7f).breakByTool(FabricToolTags.PICKAXES, 1));
-    public static final Block POLISHED_RUFFROCK_TILES = new Block(FabricBlockSettings.of(Material.PLANT).strength(1.7f).breakByTool(FabricToolTags.PICKAXES, 1));
+    public static final Block OAT_BUNDLE = new Block(FabricBlockSettings.of(Material.PLANT).strength(0.5f).breakByTool(FabricToolTags.HOES, 2));
+    public static final Block GEYSER = new Geyser(FabricBlockSettings.of(Material.PLANT).strength(3.2f).breakByTool(FabricToolTags.PICKAXES, 2));
+    public static final Block RUFFROCK = new Block(FabricBlockSettings.of(Material.PLANT).strength(3.2f).breakByTool(FabricToolTags.PICKAXES, 2));
+    public static final Block POLISHED_RUFFROCK = new Block(FabricBlockSettings.of(Material.PLANT).strength(3.2f).breakByTool(FabricToolTags.PICKAXES, 2));
+    public static final Block POLISHED_RUFFROCK_TILES = new Block(FabricBlockSettings.of(Material.PLANT).strength(3.2f).breakByTool(FabricToolTags.PICKAXES, 2));
     public static final Block GOATBERRY = new GoatberryBush(FabricBlockSettings.of(Material.PLANT).strength(0.5f));
-    public static final Block MINT = new AbstractGrass(FabricBlockSettings.of(Material.PLANT).strength(0f).noCollision());
-    public static final Block WIND = new WindBlock(FabricBlockSettings.of(Material.AIR).strength(1000f).noCollision());
-    public static final Block FLOURISHING_WINDGRASS = new AbstractGrass(FabricBlockSettings.of(Material.PLANT).breakInstantly().noCollision());
+    public static final Block MINT = new AbstractGrass(FabricBlockSettings.of(Material.PLANT).strength(0f).collidable(false));
+    public static final Block WIND = new WindBlock(FabricBlockSettings.of(Material.AIR).strength(1000f).collidable(false));
+    public static final Block FLOURISHING_WINDGRASS = new AbstractGrass(FabricBlockSettings.of(Material.PLANT).breakInstantly().collidable(false));
     public static final Block MUDDY_DIRT = new GrassBlock(FabricBlockSettings.of(Material.SOIL).strength(0.5f));
-    public static final Block EBONY_TREE = new EbonyTree(FabricBlockSettings.of(Material.WOOD).strength(0.9f).noCollision().breakByTool(FabricToolTags.AXES, 1));
-    public static final Block EDELWEISS = new AbstractGrass(FabricBlockSettings.of(Material.PLANT).breakInstantly().noCollision());
+    public static final Block EBONY_TREE = new EbonyTree(FabricBlockSettings.of(Material.WOOD).strength(0.9f).collidable(false).breakByTool(FabricToolTags.AXES, 2));
+    public static final Block EDELWEISS = new AbstractGrass(FabricBlockSettings.of(Material.PLANT).breakInstantly().collidable(false));
 
     public ModBlocks() {
 
