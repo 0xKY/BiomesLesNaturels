@@ -6,8 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "biomeslesnaturels:layered_limestone",
-
+          "name": "biomeslesnaturels:layered_limestone"
         }
       ],
       "conditions": [

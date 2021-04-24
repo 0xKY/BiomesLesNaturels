@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "biomeslesnaturels:item/edelweiss"
+    "layer0": "biomeslesnaturels:block/edelweiss"
   }
 }

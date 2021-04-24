@@ -30,13 +30,24 @@ public class ModFeatures {
                     64)))
             .spreadHorizontally()
             .repeat(90);
+    private static ConfiguredFeature<?, ?> LAYERED_LIMESTONE_PATCH = Feature.ORE
+            .configure(new OreFeatureConfig(
+                    OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
+                    ModBlocks.LAYERED_LIMESTONE.getDefaultState(),
+                    64))
+            .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(
+                    0,
+                    0,
+                    64)))
+            .spreadHorizontally()
+            .repeat(90);
     private static ConfiguredFeature<?, ?> GRASSY_PATCH = Feature.ORE
             .configure(new OreFeatureConfig(
                     OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
                     Blocks.GRASS_BLOCK.getDefaultState(),
                     64))
             .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(
-                    0,
+                    50,
                     0,
                     100)))
             .spreadHorizontally()
@@ -47,7 +58,7 @@ public class ModFeatures {
                     ModBlocks.GEYSER.getDefaultState(),
                     64))
             .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(
-                    0,
+                    60,
                     0,
                     240)))
             .spreadHorizontally()
@@ -58,9 +69,9 @@ public class ModFeatures {
                     ModBlocks.MUDDY_DIRT.getDefaultState(),
                     64))
             .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(
+                    50,
                     0,
-                    0,
-                    240)))//haha
+                    100)))//haha
             .spreadHorizontally()
             .repeat(128);
     private static ConfiguredFeature<?, ?> RUFFROCK_PATCH = Feature.ORE
@@ -74,6 +85,17 @@ public class ModFeatures {
                     240)))//haha
             .spreadHorizontally()
             .repeat(96);
+    private static ConfiguredFeature<?, ?> RUFFROCK_PATCH_DEEP = Feature.ORE
+            .configure(new OreFeatureConfig(
+                    OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
+                    ModBlocks.RUFFROCK.getDefaultState(),
+                    64))
+            .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(
+                    0,
+                    0,
+                    60)))//haha
+            .spreadHorizontally()
+            .repeat(120);
 
     //Random Patches
     public static final ConfiguredFeature<?, ?> GOATBERRY_FEATURE = Feature.RANDOM_PATCH.configure((new RandomPatchFeatureConfig.Builder
@@ -82,6 +104,10 @@ public class ModFeatures {
             (new SimpleBlockStateProvider(ModBlocks.EBONY_TREE.getDefaultState()), new DoublePlantPlacer())).tries(15).build());
     public static final ConfiguredFeature<?, ?> WIND_FEATURE = Feature.RANDOM_PATCH.configure((new RandomPatchFeatureConfig.Builder
             (new SimpleBlockStateProvider(ModBlocks.WIND.getDefaultState()), SimpleBlockPlacer.INSTANCE)).build());
+    public static final ConfiguredFeature<?, ?> MINT_FEATURE = Feature.RANDOM_PATCH.configure((new RandomPatchFeatureConfig.Builder
+            (new SimpleBlockStateProvider(ModBlocks.MINT.getDefaultState()), SimpleBlockPlacer.INSTANCE)).tries(50).build());
+    public static final ConfiguredFeature<?, ?> EDELWEISS_FEATURE = Feature.RANDOM_PATCH.configure((new RandomPatchFeatureConfig.Builder
+            (new SimpleBlockStateProvider(ModBlocks.EDELWEISS.getDefaultState()), SimpleBlockPlacer.INSTANCE)).tries(30).build());
 
     public static final ConfiguredFeature<?, ?> SUNLEAF_FEATURE = Feature.RANDOM_PATCH.configure((new RandomPatchFeatureConfig.Builder
             (new SimpleBlockStateProvider(ModBlocks.SUNLEAF.getDefaultState()), SimpleBlockPlacer.INSTANCE)).tries(20).build());
@@ -89,18 +115,10 @@ public class ModFeatures {
             (new SimpleBlockStateProvider(ModBlocks.OAT_GRASS.getDefaultState()), new DoublePlantPlacer())).tries(5).build());
     public static final ConfiguredFeature<?, ?> SMALL_OAT_FEATURE = Feature.RANDOM_PATCH.configure((new RandomPatchFeatureConfig.Builder
             (new SimpleBlockStateProvider(ModBlocks.OAT_GRASS_SMALL.getDefaultState()), SimpleBlockPlacer.INSTANCE)).tries(10).build());
-    public static final ConfiguredFeature<?, ?> EDELWEISS_FEATURE = Feature.RANDOM_PATCH.configure((new RandomPatchFeatureConfig.Builder
-            (new SimpleBlockStateProvider(ModBlocks.EDELWEISS.getDefaultState()), SimpleBlockPlacer.INSTANCE)).tries(30).build());
-    public static final ConfiguredFeature<?, ?> MINT_FEATURE = Feature.RANDOM_PATCH.configure((new RandomPatchFeatureConfig.Builder
-            (new SimpleBlockStateProvider(ModBlocks.MINT.getDefaultState()), SimpleBlockPlacer.INSTANCE)).tries(50).build());
 
     public ModFeatures() {
 
         //Stone Patches
-        RegistryKey<ConfiguredFeature<?, ?>> limestonePatch = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
-                new Identifier("biomeslesnaturels", "limestone_patch"));
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, limestonePatch.getValue(), LIMESTONE_PATCH);
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.DESERT), GenerationStep.Feature.UNDERGROUND_ORES, limestonePatch);
         RegistryKey<ConfiguredFeature<?, ?>> ruffrockPatch = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
                 new Identifier("biomeslesnaturels", "ruffrock_patch"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, ruffrockPatch.getValue(), RUFFROCK_PATCH);
@@ -113,7 +131,19 @@ public class ModFeatures {
                 new Identifier("biomeslesnaturels", "grassy_patch"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, grassyPatch.getValue(), GRASSY_PATCH);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(ModBiomes.WINDSWEPT_PEAKS_KEY), GenerationStep.Feature.UNDERGROUND_ORES, grassyPatch);
+        RegistryKey<ConfiguredFeature<?, ?>> ruffrockAlternatePatch = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
+                new Identifier("biomeslesnaturels", "ruffrock_alternate_patch"));
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, ruffrockAlternatePatch.getValue(), RUFFROCK_PATCH_DEEP);
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(ModBiomes.WINDSWEPT_PEAKS_KEY), GenerationStep.Feature.UNDERGROUND_ORES, ruffrockAlternatePatch);
 
+        RegistryKey<ConfiguredFeature<?, ?>> limestonePatch = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
+                new Identifier("biomeslesnaturels", "limestone_patch"));
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, limestonePatch.getValue(), LIMESTONE_PATCH);
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.DESERT), GenerationStep.Feature.UNDERGROUND_ORES, limestonePatch);
+        RegistryKey<ConfiguredFeature<?, ?>> layeredLimestonePatch = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
+                new Identifier("biomeslesnaturels", "layered_sandstone_patch"));
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, layeredLimestonePatch.getValue(), LAYERED_LIMESTONE_PATCH);
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.DESERT), GenerationStep.Feature.UNDERGROUND_ORES, layeredLimestonePatch);
 
 
         //Random Patches
