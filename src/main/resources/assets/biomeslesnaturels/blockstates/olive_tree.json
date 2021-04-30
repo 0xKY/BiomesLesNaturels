@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=upper": {
+      "model": "biomeslesnaturels:block/olive_tree"
+    },
+    "half=lower": {
+      "model": "biomeslesnaturels:block/olive_tree_bottom"
+    }
+  }
+}

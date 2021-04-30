@@ -46,6 +46,7 @@ public final class ModBiomes {
             DefaultBiomeFeatures.addMountainTrees(generationSettings);
             DefaultBiomeFeatures.addPlainsFeatures(generationSettings);
             DefaultBiomeFeatures.addPlainsTallGrass(generationSettings);
+            DefaultBiomeFeatures.addLandCarvers(generationSettings);
 
             return (new Biome.Builder())
                     .precipitation(Biome.Precipitation.SNOW)
