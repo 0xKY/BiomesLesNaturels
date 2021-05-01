@@ -16,8 +16,8 @@ import net.minecraft.world.World;
 
 public class DrinkingBarrel extends Block {
 
-    public static final IntProperty WINE_LEVEL = IntProperty.of("wine_level", 0, 5);
-    public static int i = 0;
+    public static IntProperty WINE_LEVEL = IntProperty.of("wine_level",0,1000000);
+    int i = 0;
 
     public DrinkingBarrel(Settings settings) {
         super(settings);
@@ -42,9 +42,9 @@ public class DrinkingBarrel extends Block {
             if (i >= 1)
                 if (!world.isClient) {
                     if (itemStack.isEmpty()) {
-                      player.setStackInHand(hand, new ItemStack(Items.HONEY_BOTTLE));
-                    } else if (!player.inventory.insertStack(new ItemStack(Items.HONEY_BOTTLE))) {
-                      player.dropItem(new ItemStack(Items.HONEY_BOTTLE), false);
+                      player.setStackInHand(hand, new ItemStack(ModItems.WINE_BOTTLE));
+                    } else if (!player.inventory.insertStack(new ItemStack(ModItems.WINE_BOTTLE))) {
+                      player.dropItem(new ItemStack(ModItems.WINE_BOTTLE), false);
                     }
                 itemStack.decrement(1);
                 i--;

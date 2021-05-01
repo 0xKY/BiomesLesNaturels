@@ -18,7 +18,7 @@ public class ModBlocks {
     public static final Block LIMESTONE = new Block(FabricBlockSettings.of(Material.STONE).strength(3.0f).breakByTool(FabricToolTags.PICKAXES, 1));
     public static final Block LAYERED_LIMESTONE = new Block(FabricBlockSettings.of(Material.STONE).strength(3.0f).breakByTool(FabricToolTags.PICKAXES, 2));
     public static final Block SMOOTH_LIMESTONE = new Block(FabricBlockSettings.of(Material.STONE).strength(3.0f).breakByTool(FabricToolTags.PICKAXES, 2));
-    public static final Block SUNLEAF = new SunLeafBlock(FabricBlockSettings.of(Material.PLANT).breakInstantly().noCollision());
+    public static final Block SUNLEAF = new SunLeafBlock(FabricBlockSettings.of(Material.PLANT).breakInstantly().collidable(false));
     public static final Block OAT_BUNDLE = new Block(FabricBlockSettings.of(Material.PLANT).strength(0.5f).breakByTool(FabricToolTags.HOES, 1));
     public static final Block GEYSER = new Geyser(FabricBlockSettings.of(Material.STONE).strength(3.2f).breakByTool(FabricToolTags.PICKAXES, 1));
     public static final Block RUFFROCK = new Block(FabricBlockSettings.of(Material.STONE).strength(3.2f).breakByTool(FabricToolTags.PICKAXES, 1));
