@@ -35,7 +35,7 @@ public class DrinkingBarrel extends Block {
             if (!world.isClient) {
                 itemStack.decrement(1);
                 i++;
-                world.setBlockState(pos, state.with(WINE_LEVEL, i++));
+                world.setBlockState(pos, state.with(WINE_LEVEL, i));
                 return ActionResult.SUCCESS;
             }
         } else if (itemStack.getItem() == Items.GLASS_BOTTLE) {
@@ -48,7 +48,7 @@ public class DrinkingBarrel extends Block {
                     }
                 itemStack.decrement(1);
                 i--;
-                world.setBlockState(pos, state.with(WINE_LEVEL, i--));
+                world.setBlockState(pos, state.with(WINE_LEVEL, i));
                 return ActionResult.SUCCESS;
             }
         } else {
