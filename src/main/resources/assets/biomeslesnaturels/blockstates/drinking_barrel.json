@@ -1,7 +1,7 @@
 {
   "variants": {
     "wine_level=0": {
-      "model": "biomeslesnaturels:block/jolly_barrel"
+      "model": "biomeslesnaturels:block/jolly_barrel1"
     },
     "wine_level=1": {
       "model": "biomeslesnaturels:block/jolly_barrel2"
@@ -16,7 +16,7 @@
       "model": "biomeslesnaturels:block/jolly_barrel5"
     },
     "wine_level=5": {
-      "model": "biomeslesnaturels:block/jolly_barrel5"
+      "model": "biomeslesnaturels:block/jolly_barrel6"
     }
   }
 }
