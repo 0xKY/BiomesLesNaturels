@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=upper": {
+      "model": "biomeslesnaturels:block/grape_top"
+    },
+    "half=lower": {
+      "model": "biomeslesnaturels:block/grape_bottom"
+    }
+  }
+}

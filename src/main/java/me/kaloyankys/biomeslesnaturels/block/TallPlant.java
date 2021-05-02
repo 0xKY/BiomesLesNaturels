@@ -8,8 +8,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 
-public class OliveTree extends TallPlantBlock {
-    public OliveTree(Settings settings) {
+public class TallPlant extends TallPlantBlock {
+    public TallPlant(Settings settings) {
         super(settings);
     }
     public static final VoxelShape SHAPE = Block.createCuboidShape(1D, 0D, 1D, 14D, 16D, 14D);

@@ -4,7 +4,6 @@ import me.kaloyankys.biomeslesnaturels.block.*;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
-import net.minecraft.block.BarrelBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.GrassBlock;
 import net.minecraft.block.Material;
@@ -32,8 +31,10 @@ public class ModBlocks {
     public static final Block MUDDY_DIRT = new GrassBlock(FabricBlockSettings.of(Material.SOIL).strength(0.5f).breakByTool(FabricToolTags.SHOVELS, 1));
     public static final Block EBONY_TREE = new EbonyTree(FabricBlockSettings.of(Material.WOOD).strength(0.9f).collidable(false).breakByTool(FabricToolTags.AXES, 2));
     public static final Block EDELWEISS = new AbstractGrass(FabricBlockSettings.of(Material.PLANT).breakInstantly().collidable(false));
-    public static final Block OLIVE_TREE = new OliveTree(FabricBlockSettings.of(Material.WOOD).strength(0.9f).collidable(false).breakByTool(FabricToolTags.AXES, 2));
+    public static final Block OLIVE_TREE = new TallPlant(FabricBlockSettings.of(Material.WOOD).strength(0.9f).collidable(false).breakByTool(FabricToolTags.AXES, 2));
     public static final Block JOLLY_BARREL = new JollyBarrel(FabricBlockSettings.of(Material.WOOD).strength(0.9f).breakByTool(FabricToolTags.AXES, 2));
+    public static final Block MARBLE = new Block(FabricBlockSettings.of(Material.STONE).strength(3.0f).breakByTool(FabricToolTags.PICKAXES, 1));
+    public static final Block GRAPE = new TallPlant(FabricBlockSettings.of(Material.PLANT).strength(0.1f).collidable(false));
 
     public ModBlocks() {
 
@@ -77,5 +78,9 @@ public class ModBlocks {
         Registry.register(Registry.ITEM, new Identifier("biomeslesnaturels", "olive_tree"), new BlockItem(OLIVE_TREE, new FabricItemSettings().group(ItemGroup.DECORATIONS)));
         Registry.register(Registry.BLOCK, new Identifier("biomeslesnaturels", "drinking_barrel"), JOLLY_BARREL);
         Registry.register(Registry.ITEM, new Identifier("biomeslesnaturels", "drinking_barrel"), new BlockItem(JOLLY_BARREL, new FabricItemSettings().group(ItemGroup.DECORATIONS)));
+        Registry.register(Registry.BLOCK, new Identifier("biomeslesnaturels", "marble"), MARBLE);
+        Registry.register(Registry.ITEM, new Identifier("biomeslesnaturels", "marble"), new BlockItem(MARBLE, new FabricItemSettings().group(ItemGroup.DECORATIONS)));
+        Registry.register(Registry.BLOCK, new Identifier("biomeslesnaturels", "grape"), GRAPE);
+        Registry.register(Registry.ITEM, new Identifier("biomeslesnaturels", "grape"), new BlockItem(GRAPE, new FabricItemSettings().group(ItemGroup.DECORATIONS)));
     }
 }
