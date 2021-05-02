@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.Block;
+import net.minecraft.block.CarpetBlock;
 import net.minecraft.block.GrassBlock;
 import net.minecraft.block.Material;
 import net.minecraft.item.*;
@@ -35,6 +36,9 @@ public class ModBlocks {
     public static final Block JOLLY_BARREL = new JollyBarrel(FabricBlockSettings.of(Material.WOOD).strength(0.9f).breakByTool(FabricToolTags.AXES, 2));
     public static final Block MARBLE = new Block(FabricBlockSettings.of(Material.STONE).strength(3.0f).breakByTool(FabricToolTags.PICKAXES, 1));
     public static final Block GRAPE = new TallPlant(FabricBlockSettings.of(Material.PLANT).strength(0.1f).collidable(false));
+    public static final Block BLOSSOM_PATCH = new CarpetPatchBlock(FabricBlockSettings.of(Material.PLANT).strength(0.05f).collidable(false));
+    public static final Block CLOVER_PATCH = new CarpetPatchBlock(FabricBlockSettings.of(Material.PLANT).strength(0.05f).collidable(false));
+    public static final Block FOURLEAF_CLOVER = new CarpetPatchBlock(FabricBlockSettings.of(Material.PLANT).strength(0.05f).collidable(false));
 
     public ModBlocks() {
 
@@ -82,5 +86,11 @@ public class ModBlocks {
         Registry.register(Registry.ITEM, new Identifier("biomeslesnaturels", "marble"), new BlockItem(MARBLE, new FabricItemSettings().group(ItemGroup.DECORATIONS)));
         Registry.register(Registry.BLOCK, new Identifier("biomeslesnaturels", "grape"), GRAPE);
         Registry.register(Registry.ITEM, new Identifier("biomeslesnaturels", "grape"), new BlockItem(GRAPE, new FabricItemSettings().group(ItemGroup.DECORATIONS)));
+        Registry.register(Registry.BLOCK, new Identifier("biomeslesnaturels", "clover"), CLOVER_PATCH);
+        Registry.register(Registry.ITEM, new Identifier("biomeslesnaturels", "clover"), new BlockItem(CLOVER_PATCH, new FabricItemSettings().group(ItemGroup.DECORATIONS)));
+        Registry.register(Registry.BLOCK, new Identifier("biomeslesnaturels", "fourleaf_clover"), FOURLEAF_CLOVER);
+        Registry.register(Registry.ITEM, new Identifier("biomeslesnaturels", "fourleaf_clover"), new BlockItem(FOURLEAF_CLOVER, new FabricItemSettings().group(ItemGroup.DECORATIONS)));
+        Registry.register(Registry.BLOCK, new Identifier("biomeslesnaturels", "blossom_patch"), BLOSSOM_PATCH);
+        Registry.register(Registry.ITEM, new Identifier("biomeslesnaturels", "blossom_patch"), new BlockItem(BLOSSOM_PATCH, new FabricItemSettings().group(ItemGroup.DECORATIONS)));
     }
 }
