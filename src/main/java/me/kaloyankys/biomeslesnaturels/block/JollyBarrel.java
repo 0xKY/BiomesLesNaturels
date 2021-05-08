@@ -18,11 +18,10 @@ import net.minecraft.world.World;
 public class JollyBarrel extends Block {
     public static final IntProperty WINE_LEVEL = IntProperty.of("wine_level", 0, 5);
     public static final BooleanProperty OPEN = BooleanProperty.of("open");
-    int i = 0;
+    private int i = 0;
 
     public JollyBarrel(Settings settings) {
         super(settings);
-        this.setDefaultState((BlockState) ((BlockState) this.stateManager.getDefaultState()).with(WINE_LEVEL, 0).with(OPEN, false));
     }
 
     @Override
@@ -40,7 +39,8 @@ public class JollyBarrel extends Block {
                 world.setBlockState(pos, state.with(WINE_LEVEL, i).with(OPEN, true));
                 return ActionResult.SUCCESS;
             }
-        } if (itemStack.getItem() == Items.GLASS_BOTTLE && i >= 1) {
+        }
+        if (itemStack.getItem() == Items.GLASS_BOTTLE && i >= 1) {
             if (!world.isClient) {
                 if (itemStack.isEmpty()) {
                     player.setStackInHand(hand, new ItemStack(ModItems.WINE_BOTTLE));

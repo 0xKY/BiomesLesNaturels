@@ -11,8 +11,8 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
 public class OatGrassSmall extends PlantBlock {
-    public OatGrassSmall(FabricBlockSettings group) {
-        super(FabricBlockSettings.of(Material.PLANT).strength(0f).nonOpaque());
+    public OatGrassSmall(Settings settings) {
+        super(settings);
 
     }
         public static final VoxelShape SHAPE = Block.createCuboidShape(1D, 0D, 1D, 15D, 15D, 15D);

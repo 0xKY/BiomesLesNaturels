@@ -4,6 +4,7 @@
   "package": "me.kaloyankys.biomeslesnaturels.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "PlayerMixin",
     "TemptMixin"
   ],
   "client": [

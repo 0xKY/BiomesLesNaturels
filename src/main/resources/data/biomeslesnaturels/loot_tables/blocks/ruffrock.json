@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "biomeslesnature:ruffrock"
+          "name": "biomeslesnaturels:ruffrock"
         }
       ],
       "conditions": [

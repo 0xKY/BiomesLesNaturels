@@ -1,5 +1,6 @@
 package me.kaloyankys.biomeslesnaturels.item;
 
+import me.kaloyankys.biomeslesnaturels.util.Alcoholism;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -19,6 +20,9 @@ import net.minecraft.util.UseAction;
 import net.minecraft.world.World;
 
 public class WineBottle extends Item {
+    public static float w = 8.0f;
+    public static float walkSpeedDebuff;
+
     public WineBottle(Settings settings) {
         super(settings);
     }
@@ -32,7 +36,7 @@ public class WineBottle extends Item {
         }
 
         if (!world.isClient) {
-          user.applyStatusEffect(new StatusEffectInstance(StatusEffects.LUCK, 20));
+            user.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 400, 3));
         }
 
         if (stack.isEmpty()) {
@@ -51,7 +55,7 @@ public class WineBottle extends Item {
     }
 
     public int getMaxUseTime(ItemStack stack) {
-        return 40;
+        return 10;
     }
 
     public UseAction getUseAction(ItemStack stack) {

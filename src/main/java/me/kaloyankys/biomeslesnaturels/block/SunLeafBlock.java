@@ -14,8 +14,8 @@ import net.minecraft.world.World;
 import java.util.Random;
 
 public class SunLeafBlock extends PlantBlock {
-        public SunLeafBlock(FabricBlockSettings group) {
-            super(FabricBlockSettings.of(Material.PLANT).strength(0f).nonOpaque());
+        public SunLeafBlock(Settings settings) {
+            super(settings);
 
         }
         public static final VoxelShape SHAPE = Block.createCuboidShape(1D, 0D, 1D, 15D, 16D, 15D);
