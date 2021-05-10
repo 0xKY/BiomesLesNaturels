@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "biomeslesnaturels:block/oil_lamp"
+  }
+}

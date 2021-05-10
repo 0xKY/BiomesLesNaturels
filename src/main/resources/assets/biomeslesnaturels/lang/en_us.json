@@ -21,5 +21,14 @@
   "item.biomeslesnaturels.oat_bread": "Oat Bread",
   "block.biomeslesnaturels.olive_tree": "Olive Tree",
   "item.biomeslesnaturels.olive": "Olive",
-  "item.biomeslesnaturels.grapes": "Grapes"
+  "item.biomeslesnaturels.grapes": "Grapes",
+  "item.biomeslesnaturels.wine_bottle": "Wine Bottle",
+  "block.biomeslesnaturels.grape": "Grape Vine",
+  "block.biomeslesnaturels.marble": "Marble",
+  "block.biomeslesnaturels.blossom": "Blossom",
+  "block.biomeslesnaturels.clover": "Clover Patch",
+  "block.biomeslesnaturels.fourleaf_clover": "Fourleaf Clover",
+  "block.biomeslesnaturels.oil_lamp_unlit": "Oil Lamp",
+  "block.biomeslesnaturels.oil_lamp": "Oil Lamp",
+  "itemGroup.tab.biomeslesnaturels:biomeslesnaturels_itemgroup": "Biomes Les Naturels"
 }

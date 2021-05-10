@@ -1,5 +1,6 @@
 package me.kaloyankys.biomeslesnaturels.modinit;
 
+import me.kaloyankys.biomeslesnaturels.Biomeslesnaturels;
 import me.kaloyankys.biomeslesnaturels.block.*;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
@@ -16,7 +17,7 @@ public class ModBlocks {
     public static final Block OAT_GRASS_SMALL = register("oat_grass_small", new OatGrassSmall(FabricBlockSettings.of(Material.PLANT).breakInstantly().collidable(false)));
     public static final Block LIMESTONE = register("limestone", new Block(FabricBlockSettings.of(Material.STONE).strength(3.0f).breakByTool(FabricToolTags.PICKAXES, 1)));
     public static final Block LAYERED_LIMESTONE = register("layered_limestone", new Block(FabricBlockSettings.of(Material.STONE).strength(3.0f).breakByTool(FabricToolTags.PICKAXES, 2)));
-    public static final Block SMOOTH_LIMESTONE = register("oat_grass", new Block(FabricBlockSettings.of(Material.STONE).strength(3.0f).breakByTool(FabricToolTags.PICKAXES, 2)));
+    public static final Block SMOOTH_LIMESTONE = register("smooth_limestone", new Block(FabricBlockSettings.of(Material.STONE).strength(3.0f).breakByTool(FabricToolTags.PICKAXES, 2)));
     public static final Block SUNLEAF = register("sun_leaf", new SunLeafBlock(FabricBlockSettings.of(Material.PLANT).breakInstantly().collidable(false)));
     public static final Block OAT_BUNDLE = register("oat_bundle", new Block(FabricBlockSettings.of(Material.PLANT).strength(0.5f).breakByTool(FabricToolTags.HOES, 1)));
     public static final Block GEYSER = register("geyser", new Geyser(FabricBlockSettings.of(Material.STONE).strength(3.2f).breakByTool(FabricToolTags.PICKAXES, 1)));
@@ -34,13 +35,13 @@ public class ModBlocks {
     public static final Block JOLLY_BARREL = register("drinking_barrel", new JollyBarrel(FabricBlockSettings.of(Material.WOOD).strength(0.9f).breakByTool(FabricToolTags.AXES, 2)));
     public static final Block MARBLE = register("marble", new Block(FabricBlockSettings.of(Material.STONE).strength(3.0f).breakByTool(FabricToolTags.PICKAXES, 1)));
     public static final Block GRAPE = register("grape", new TallPlant(FabricBlockSettings.of(Material.PLANT).strength(0.1f).collidable(false)));
-    public static final Block BLOSSOM = register("blossom", new CarpetPatchBlock(FabricBlockSettings.of(Material.PLANT).strength(0.05f).collidable(false)));
-    public static final Block CLOVER_PATCH = register("clover", new CarpetPatchBlock(FabricBlockSettings.of(Material.PLANT).strength(0.05f).collidable(false)));
-    public static final Block FOURLEAF_CLOVER = register("fourleaf_clover", new CarpetPatchBlock(FabricBlockSettings.of(Material.PLANT).strength(0.05f).collidable(false)));
-    public static final Block OIL = register("oil", new Oil(FabricBlockSettings.of(Material.WOOL).strength(0.01f).slipperiness(1.2f)));
+    public static final Block BLOSSOM = register("blossom", new CloverPatch(FabricBlockSettings.of(Material.PLANT).strength(0.05f).collidable(false)));
+    public static final Block CLOVER_PATCH = register("clover", new CloverPatch(FabricBlockSettings.of(Material.PLANT).strength(0.05f).collidable(false)));
+    public static final Block OIL_LAMP_UNLIT = register("oil_lamp_unlit", new UnlitOilLamp(FabricBlockSettings.of(Material.REDSTONE_LAMP).strength(1.5f)));
+    public static final Block OIL_LAMP = register("oil_lamp", new Block(FabricBlockSettings.of(Material.REDSTONE_LAMP).strength(1.5f).luminance(15)));
 
     public static Block register(String id, Block block) {
-        Item blockItem = new BlockItem(block, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS));
+        Item blockItem = new BlockItem(block, new Item.Settings().group(Biomeslesnaturels.BIOMESLESNATURELS_ITEMGROUP));
         Registry.register(Registry.ITEM, new Identifier("biomeslesnaturels", id), blockItem);
         return Registry.register(Registry.BLOCK, new Identifier("biomeslesnaturels", id), block);
     }

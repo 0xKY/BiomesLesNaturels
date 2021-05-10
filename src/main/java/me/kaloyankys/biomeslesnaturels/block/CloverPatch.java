@@ -8,11 +8,13 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 
-public class Oil extends IceBlock {
-    protected static final VoxelShape SHAPE = Block.createCuboidShape(0.0D, -16.0D, 0.0D, 17.0D, 6.0D, 17.0D);
-    public Oil(AbstractBlock.Settings settings) {
+public class CloverPatch extends Block {
+    protected static final VoxelShape SHAPE = Block.createCuboidShape(0.0D, 0.0D, 0.0D, 15.0D, 1.0D, 15.0D);
+
+    public CloverPatch(AbstractBlock.Settings settings) {
         super(settings);
     }
+
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return SHAPE;
     }
@@ -23,4 +25,3 @@ public class Oil extends IceBlock {
         return !world.isAir(pos.down());
     }
 }
-

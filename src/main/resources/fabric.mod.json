@@ -26,5 +26,8 @@
     "fabricloader": ">=0.11.2",
     "fabric": "*",
     "minecraft": "1.16.5"
+  },
+  "recommends" : {
+    "canvas" : "*"
   }
 }

@@ -45,6 +45,7 @@ public final class ModBiomes {
         DefaultBiomeFeatures.addPlainsFeatures(generationSettings);
         DefaultBiomeFeatures.addPlainsTallGrass(generationSettings);
         DefaultBiomeFeatures.addLandCarvers(generationSettings);
+        DefaultBiomeFeatures.addMossyRocks(generationSettings);
 
         return (new Biome.Builder())
                 .precipitation(Biome.Precipitation.RAIN)
@@ -94,6 +95,7 @@ public final class ModBiomes {
         DefaultBiomeFeatures.addPlainsFeatures(generationSettings);
         DefaultBiomeFeatures.addPlainsTallGrass(generationSettings);
         DefaultBiomeFeatures.addLandCarvers(generationSettings);
+        DefaultBiomeFeatures.addBirchTrees(generationSettings);
 
         return (new Biome.Builder())
                 .precipitation(Biome.Precipitation.RAIN)

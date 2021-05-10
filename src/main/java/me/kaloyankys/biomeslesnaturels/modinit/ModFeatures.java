@@ -151,10 +151,12 @@ public class ModFeatures {
     public static final ConfiguredFeature<?, ?> GRAPE_VINES = Feature.RANDOM_PATCH.configure((new RandomPatchFeatureConfig.Builder
             (new SimpleBlockStateProvider(ModBlocks.GRAPE.getDefaultState()), new DoublePlantPlacer())).tries(30).build());
     public static final ConfiguredFeature<?, ?> CLOVER_FEATURE = Feature.RANDOM_PATCH.configure((new RandomPatchFeatureConfig.Builder
-            (new SimpleBlockStateProvider(ModBlocks.CLOVER_PATCH.getDefaultState()), SimpleBlockPlacer.INSTANCE)).tries(20).build());
+            (new SimpleBlockStateProvider(ModBlocks.CLOVER_PATCH.getDefaultState()), SimpleBlockPlacer.INSTANCE)).tries(30).build());
+    public static final ConfiguredFeature<?, ?> BLOSSOM_FEATURE = Feature.RANDOM_PATCH.configure((new RandomPatchFeatureConfig.Builder
+            (new SimpleBlockStateProvider(ModBlocks.BLOSSOM.getDefaultState()), SimpleBlockPlacer.INSTANCE)).tries(20).build());
 
     //Trees
-    public static final ConfiguredFeature<TreeFeatureConfig, ?> TEST_TREE = Feature.TREE.configure((new TreeFeatureConfig.Builder
+    public static final ConfiguredFeature<TreeFeatureConfig, ?> LEMON_TREE = Feature.TREE.configure((new TreeFeatureConfig.Builder
             (new SimpleBlockStateProvider(Blocks.OAK_LOG.getDefaultState()), new SimpleBlockStateProvider(Blocks.OAK_LEAVES.getDefaultState()),
                     new LargeOakFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(2), 2),
                     new LargeOakTrunkPlacer(8, 11, 2),
@@ -253,12 +255,15 @@ public class ModFeatures {
                 new Identifier("biomeslesnaturels", "clover_feature"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, cloverFeature.getValue(), CLOVER_FEATURE);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(ModBiomes.MEDITERRANEAN_PLAINS_KEY, ModBiomes.MEDITERRANEAN_KEY), GenerationStep.Feature.VEGETAL_DECORATION, cloverFeature);
-
+        RegistryKey<ConfiguredFeature<?, ?>> blossomFeature = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
+                new Identifier("biomeslesnaturels", "blossom_feature"));
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, blossomFeature.getValue(), BLOSSOM_FEATURE);
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(ModBiomes.MEDITERRANEAN_KEY), GenerationStep.Feature.VEGETAL_DECORATION, blossomFeature);
         //Trees
-        RegistryKey<ConfiguredFeature<?, ?>> testTree = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
-                new Identifier("biomeslesnaturels", "test_tree"));
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, testTree.getValue(), TEST_TREE);
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(ModBiomes.MEDITERRANEAN_KEY), GenerationStep.Feature.VEGETAL_DECORATION, testTree);
+        RegistryKey<ConfiguredFeature<?, ?>> lemonTree = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
+                new Identifier("biomeslesnaturels", "lemon_tree"));
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, lemonTree.getValue(), LEMON_TREE);
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(ModBiomes.MEDITERRANEAN_KEY), GenerationStep.Feature.VEGETAL_DECORATION, lemonTree);
 
         //Features
     }
